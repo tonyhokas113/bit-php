@@ -16,8 +16,8 @@
 
 // # 2
 
-// $random_reiksme = rand(1, 4);
-// $random_reiksme2 = rand(1, 4);
+// $random_reiksme = rand(0, 4);
+// $random_reiksme2 = rand(0, 4);
 
 // if ($random_reiksme > $random_reiksme2) {
 //     echo (round($random_reiksme / $random_reiksme2, 2));
@@ -29,11 +29,11 @@
 
 // echo '<hr>';
 
-// # 3
+# 3
 
-// $randomReiksme = rand(1, 25);
-// $randomReiksme2 = rand(1, 25);
-// $randomReiksme3 = rand(1, 25);
+// $randomReiksme = rand(0, 25);
+// $randomReiksme2 = rand(0, 25);
+// $randomReiksme3 = rand(0, 25);
 
 // if ($randomReiksme < $randomReiksme2 && $randomReiksme > $randomReiksme3 || $randomReiksme < $randomReiksme3 && $randomReiksme > $randomReiksme2) {
 //     echo $randomReiksme;
@@ -133,7 +133,7 @@
 
 // echo '<hr>';
 
-// # 8
+# 8
 
 // $zvakiuKiekis = rand(5, 3000);
 // $zvakiuKaina = 0;
@@ -159,7 +159,7 @@
 
 // echo '<hr>';
 
-// # 9
+# 9
 
 // $kintamasis1 = rand(0, 100);
 // $kintamasis2 = rand(0, 100);
@@ -268,152 +268,19 @@
 
 # 11
 
-echo $Pirmas = rand(1000, 9999);
-echo '<br>';
-echo $Antras = rand(1000, 9999);
-echo '<br>';
-echo $Trecias = rand(1000, 9999);
-echo '<br>';
-echo $Ketvirtas = rand(1000, 9999);
-echo '<br>';
-echo $Penktas = rand(1000, 9999);
-echo '<br>';
-echo $Sestas = rand(1000, 9999);
+$var1 = rand(1000, 9999);
+$var2 = rand(1000, 9999);
+$var3 = rand(1000, 9999);
+$var4 = rand(1000, 9999);
+$var5 = rand(1000, 9999);
+$var6 = rand(1000, 9999);
 
-echo '<br>';
-echo '<br>';
+echo "Skaičius1 = $var1; Skaičius2 = $var2; Skaičius3 = $var3; Skaičius4 = $var4; Skaičius5 = $var5; Skaičius6 = $var6.<br>";
 
-// if (max($Pirmas, $Antras, $Trecias, $Ketvirtas, $Penktas, $Sestas) == $Pirmas) {
-//     echo $Pirmas;
-//     if (max($Antras, $Trecias, $Ketvirtas, $Penktas, $Sestas) == $Antras) {
-//         echo $Antras;
-//         if (max($Trecias, $Ketvirtas, $Penktas, $Sestas) == $Trecias) {
-//             echo $Trecias;
-//             if (max($Ketvirtas, $Penktas, $Sestas) == $Ketvirtas) {
-//                 echo $Ketvirtas;
-//                 if (max($Penktas, $Sestas) == $Penktas) {
-//                     echo $Penktas + ' ' + $Sestas;
-//                 } else {
-//                     echo $Sestas + ' ' + $Penktas;
-//                 }
-//             }
-//         }
-//     }
-//     if (max($Antras, $Trecias, $Ketvirtas, $Penktas, $Sestas) == $Trecias) {
-//         echo $Trecias;
-//         if (max($Antras, $Ketvirtas, $Penktas, $Sestas) == $Antras) {
-//             echo $Antras;
-//             if (max($Ketvirtas, $Penktas, $Sestas) == $Ketvirtas) {
-//                 echo $Ketvirtas;
-//                 if (max($Penktas, $Sestas) == $Penktas) {
-//                     echo $Penktas + ' ' + $Sestas;
-//                 } else {
-//                     echo $Sestas + ' ' + $Penktas;
-//                 }
-//             }
-//         }
-//         if (max($Antras, $Ketvirtas, $Penktas, $Sestas) == $Ketvirtas) {
-//             echo $Ketvirtas;
-//             if (max($Antras, $Penktas, $Sestas) == $Antras) {
-//                 echo $Antras;
-//                 if (max($Penktas, $Sestas) == $Penktas) {
-//                     echo $Penktas + ' ' + $Sestas;
-//                 } else {
-//                     echo $Sestas + ' ' + $Penktas;
-//                 }
-//             }
-//         }
-//         if (max($Antras, $Ketvirtas, $Penktas, $Sestas) == $Penktas) {
-//             echo $Penktas;
-//             if (max($Antras, $Ketvirtas, $Sestas) == $Antras) {
-//                 echo $Antras;
-//                 if (max($Ketvirtas, $Sestas) == $Ketvirtas) {
-//                     echo $Ketvirtas + ' ' + $Sestas;
-//                 } else {
-//                     echo $Sestas + ' ' + $Ketvirtas;
-//                 }
-//             }
-//         }
-//         if (max($Antras, $Ketvirtas, $Penktas, $Sestas) == $Sestas) {
-//             echo $Sestas;
-//             if (max($Antras, $Ketvirtas, $Penktas) == $Antras) {
-//                 echo $Antras;
-//                 if (max($Ketvirtas, $Penktas) == $Ketvirtas) {
-//                     echo $Ketvirtas + ' ' + $Penktas;
-//                 } else {
-//                     echo $Penktas + ' ' + $Ketvirtas;
-//                 }
-//             }
-//         }
-//     }
-//     if (max($Antras, $Trecias, $Ketvirtas, $Penktas, $Sestas) == $Ketvirtas) {
-//         echo $Ketvirtas;
-//         if (max($Antras, $Trecias, $Penktas, $Sestas) == $Antras) {
-//             echo $Antras;
-//             if (max($Trecias, $Penktas, $Sestas) == $Trecias) {
-//                 echo $Trecias;
-//                 if (max($Penktas, $Sestas) == $Penktas) {
-//                     echo $Penktas + ' ' + $Sestas;
-//                 } else {
-//                     echo $Sestas + ' ' + $Penktas;
-//                 }
-//             }
-//         }
-//     }
-//     if (max($Antras, $Trecias, $Ketvirtas, $Penktas, $Sestas) == $Penktas) {
-//         echo $Penktas;
-//         if (max($Antras, $Trecias, $Ketvirtas, $Sestas) == $AntrasA) {
-//             echo $Antras;
-//             if (max($Trecias, $Ketvirtas, $Sestas) == $Trecias) {
-//                 echo $Trecias;
-//                 if (max($Ketvirtas, $Sestas) == $Ketvirtas) {
-//                     echo $Ketvirtas + ' ' + $Sestas;
-//                 } else {
-//                     echo $Sestas + ' ' + $Ketvirtas;
-//                 }
-//             }
-//         }
-//     }
-//     if (max($Antras, $Trecias, $Ketvirtas, $Penktas, $Sestas) == $Sestas) {
-//         echo $Sestas;
-//         if (max($Antras, $Trecias, $Ketvirtas, $Penktas) == $Antras) {
-//             echo $Antras;
-//             if (max($Trecias, $Ketvirtas, $Penktas) == $Trecias) {
-//                 echo $Trecias;
-//                 if (max($Ketvirtas, $Penktas) == $Ketvirtas) {
-//                     echo $Ketvirtas + ' ' + $Penktas;
-//                 } else {
-//                     echo $Penktas + ' ' + $Ketvirtas;
-//                 }
-//             }
-//         }
-//     }
-// }
-// if (max($Pirmas, $Antras, $Trecias, $Ketvirtas, $Penktas, $Sestas) == $Antras) {
-//     echo $Antras;
-// }
-// if (max($Pirmas, $Antras, $Trecias, $Ketvirtas, $Penktas, $Sestas) == $Trecias) {
-//     echo $Trecias;
-// }
-// if (max($Pirmas, $Antras, $Trecias, $Ketvirtas, $Penktas, $Sestas) == $Ketvirtas) {
-//     echo $Ketvirtas;
-// }
-// if (max($Pirmas, $Antras, $Trecias, $Ketvirtas, $Penktas, $Sestas) == $Penktas) {
-//     echo $Penktas;
-// }
-// if (max($Pirmas, $Antras, $Trecias, $Ketvirtas, $Penktas, $Sestas) == $Sestas) {
-//     echo $Sestas;
-// }
+$string = strval($var1) . ' ' . strval($var2) . ' ' . strval($var3) . ' ' . strval($var4) . ' ' . strval($var5) . ' ' . strval($var6) . ' ';
 
-// echo max($Pirmas, $Antras, $Trecias, $Ketvirtas, $Penktas, $Sestas);
-// echo '<br>';
+$stringParts = str_split($string, 5);
 
-// echo '<br>';
-// echo min($Pirmas, $Antras, $Trecias, $Ketvirtas, $Penktas, $Sestas);
+rsort($stringParts);
 
-// if ($Pirmas < $Antras && $Pirmas < $Trecias && $Pirmas < $Ketvirtas && $Pirmas < $Penktas && $Pirmas < $Sestas) {
-//     echo "$Pirmas, "
-// }
-// else {
-    
-// }
+echo 'String of descending variables: ' . implode($stringParts) . '<br><br>';
