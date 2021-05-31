@@ -15,17 +15,19 @@ echo "<br>";
 
 $sk = 1;
 
+$sk = 1;
+
 echo ++$sk * $sk++;
-//  1 * 3
+// 2 * 2
 
 echo $sk++ * $sk++;
-//  2 * 3
+// 1 * 2
 
 echo $sk++ * ++$sk;
-//  2 * 2
+// 1 * 3
 
 echo ++$sk * ++$sk;
-//  1 * 2
+// 2 * 3
 
 
 $ketvirtas = $ketvirtas + 5;
@@ -48,8 +50,6 @@ echo $trecias;
 $pirmas = 'bla bla';
 $antras = "ku $pirmas kū";
 
-// back tickai ?
-
 echo "<br>";
 
 $pirmas = 'antras';
@@ -64,3 +64,31 @@ echo "<br>";
 var_dump('ku ku');
 
 // string(5) "ku ku" atspausdina tipa, stringo ilgi (baitais) ir reiksme.
+
+echo "<br>";
+echo '<hr>';
+
+echo var_dump(0 == 0);
+
+echo "<br>";
+
+
+// Palyginimo operatorius <=> (spaceship) naudojamas sortinti 
+echo 1 <=> 1; // 0
+
+echo "<br>";
+
+var_dump('1' == '01'); // 1 == 1 -> true
+
+echo "<br>";
+
+$drambliai = 2;
+if ($drambliai) {
+    echo 'Yra dramblių';
+}
+
+echo "<br>";
+
+echo $rezultatas = (4 > 1) ? 'Yes' : 'No';
+
+//match
