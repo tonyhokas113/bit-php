@@ -7,12 +7,9 @@ echo '<h3> 1. </h3>';
 $aktoriausVardas = 'Johnny';
 $aktoriausPavarde = 'Depp';
 
-echo substr($aktoriausVardas, -3);
-echo '<br>';
-echo substr($aktoriausPavarde, -3);
+echo strlen($aktoriausVardas) > strlen($aktoriausPavarde) ? $aktoriausPavarde : $aktoriausVardas;
 echo '<br>';
 
-echo '<hr>';
 
 # 2
 
@@ -41,6 +38,7 @@ echo $pirmuRaidziuStringas;
 
 echo '<hr>';
 
+
 # 4
 
 echo '<h3> 4. </h3>';
@@ -50,6 +48,18 @@ $aktoriausPavarde4 = 'Depp';
 $paskutiniuRaidziuStringas = substr($aktoriausVardas4, -3) . substr($aktoriausPavarde4, -3);
 
 echo $paskutiniuRaidziuStringas;
+
+//---------------------------------------------------------------------------------------
+
+// v2
+
+// $name = 'Leonardo';
+
+// $surname = 'DaVincio';
+
+// $letters = substr($name, (strlen($name) - 3), 3) . substr($surname, (strlen($surname) - 3), 3);
+
+// echo $letters;
 
 echo '<hr>';
 
@@ -74,6 +84,13 @@ $stringas2 = 'An American in Paris';
 $raidesPasikartojimas = substr_count($stringas2, 'a') + substr_count($stringas2, 'A');
 
 echo $raidesPasikartojimas;
+
+//---------------------------------------------------------------------------------------
+
+// v2 
+
+// $pavadinimas = 'An American in Paris';
+// echo substr_count(strtolower($pavadinimas), 'a');
 
 echo '<hr>';
 
@@ -114,6 +131,42 @@ echo '<br>';
 
 echo 'Epizodas: ' . str_ireplace(str_split('a-'), '', substr($sugeneruotasStringas, 18, 7));
 
+//---------------------------------------------------------------------------------------
+
+// v2 
+
+// $name = 'Star Wars: Episode ' . str_repeat(' ', rand(0, 5)) . rand(1, 9) . ' - A New Hope';
+
+// echo $name . '<br>';
+
+// echo 'Episode is: ' . substr(trim(substr($name, 18)), 0, 1);
+
+//---------------------------------------------------------------------------------------
+
+// $starwars = 'Star Wars: Episode ' . str_repeat(' ', rand(0, 5)) . rand(1, 9) . ' - A New Hope';
+
+// echo preg_replace('/\D/', '', $starwars);
+
+//---------------------------------------------------------------------------------------
+
+// $string = 'Star Wars: Episode ' . str_repeat(' ', rand(0, 5)) . rand(1, 9) . ' - A New Hope';
+
+// preg_match_all('!\d+!', $string, $episodeNumber);
+
+// echo $string . '<br>Episode Nr. ' . $episodeNumber[0][0] . '.';
+
+//---------------------------------------------------------------------------------------
+
+// echo preg_replace('/[^0-9]/', '', $string);
+
+//---------------------------------------------------------------------------------------
+
+// $string = 'Star Wars: Episode ' . str_repeat(' ', rand(0, 5)) . rand(1, 9) . ' - A New Hope';
+
+// echo 'Epizodo nr. ' . preg_replace('/[^0-9]/', '', $string);
+
+//---------------------------------------------------------------------------------------
+
 echo '<hr>';
 
 # 9
@@ -147,6 +200,37 @@ for ($i = 0; $i < count($atskirtiZodziai2); $i++) {
 
 echo "<b>$ilgesniZodziai</b>";
 
+//---------------------------------------------------------------------------------------
+
+// v2
+
+// $string2 = 'Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale.';
+
+
+
+// echo $string2;
+
+// echo '<br>';
+// echo '<br>';
+
+
+
+// $words = explode(' ', $string2);
+
+
+
+// $counter = 0;
+
+// for ($i = 0; $i < count($words); $i++) {
+
+//     if (mb_strlen($words[$i], 'UTF-8') <= 5) {
+
+//         $counter++;
+//     }
+// }
+
+// echo "Žodžių, trumpenių arba lygių nei 5 raidės skaičius: $counter";
+
 echo '<hr>';
 
 # 10
@@ -156,7 +240,48 @@ echo '<h3> 10. </h3>';
 $raides = substr(str_shuffle('abcdefghijklmnopqrstuvwxyz'), 0, 3);
 echo "<b>$raides</b>";
 
+//---------------------------------------------------------------------------------------
+
+// v2
+
+// $randomStringChars = str_split('abcdefghijklmnopqrstuvwxyz' . 'ABCDEFGHIJKLMNOPQRSTUVWXYZ');
+
+// shuffle($randomStringChars);
+
+// $rand = '';
+
+// foreach (array_rand($randomStringChars, 3) as $k) $rand .= $randomStringChars[$k];
+
+// echo 'Atsitiktiniai 3 lotyniski simboliai:<br>';
+
+// echo $rand;
+
+//---------------------------------------------------------------------------------------
+
+// echo chr(rand(97, 122)) . chr(rand(97, 122)) . chr(rand(97, 122));
+
+//---------------------------------------------------------------------------------------
+
+// $characters = range('a', 'z');
+
+// $string = implode($characters);
+
+
+
+// echo "Full ABC string: $string";
+
+// echo '<br>';
+
+
+
+// $randomString = substr(str_shuffle($string), 0, 3);
+
+// echo $randomString;
+
+
 echo '<hr>';
+
+
 
 # 11
 

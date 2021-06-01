@@ -163,7 +163,7 @@
 // $number = rand(-10, 10);
 
 // if ($number > 0) {
-//     echo "<h2><p style='color:blue'>$number</p></h2>";
+// echo "<h2><p style='color:blue'>$number</p></h2>";
 // }
 // if ($number < 0) {
 //     echo "<h2><p style='color:green'>$number</p></h2>";
