@@ -332,3 +332,23 @@ for ($i = 0; $i < 5; $i++) {
 }
 
 echo "<b>$randomString</b>";
+
+// -------------------------------------------------------------------
+
+// v2 
+
+// Papildomas.
+// 11. Parašykite kodą, kuris generuotų atsitiktinį stringą su 10 atsitiktine tvarka išdėliotų
+// žodžių, o žodžius generavimui imtų iš 9-me uždavinyje pateiktų dviejų stringų. Žodžiai
+// neturi kartotis. (reikės masyvo)
+
+// $pirmas = preg_replace('/[.,]/', '', $pirmas);
+// $antras = preg_replace('/[,.]/', '', $antras);
+// $string = array_merge(explode(" ", $pirmas), explode(" ", $antras));
+// $kiek = count($string);
+// $random = [];
+// while (count($random) < 10) {
+//     array_push($random, $string[rand(0, $kiek - 1)]);
+//     $random = array_unique($random);
+// }
+// print_r($random);
