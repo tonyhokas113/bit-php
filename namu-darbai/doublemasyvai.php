@@ -68,6 +68,31 @@ foreach ($masyvas as $value) {
 
 _d("$sum $sum1 $sum2 $sum3 $sum4", '2c');
 
+//----------------------------------------------------------
+
+
+// $reiksmes = [];
+// $reiksme = 0;
+// foreach (range(1, 5) as $key => $value) {
+//     foreach (range(1, 10) as $key2 => $value2) {
+//         $reiksme += $masyvas[$key2][$key];
+//     }
+//     $reiksmes[] = $reiksme;
+//     $reiksme = 0;
+// }
+// print_r($reiksmes);
+
+//----------------------------------------------------------
+
+// foreach ($masyvas[0] as $o => $outerValue) {
+//     $sum = 0;
+//     foreach ($masyvas as $i => $innerValue) {
+//         $sum += $masyvas[$i][$o];
+//     }
+
+//     echo $sum . "<br>";
+// }
+
 
 //------------------------- 2d 
 
@@ -77,6 +102,14 @@ foreach ($masyvas as $key => $_) {
 }
 
 _d($masyvas, '2d');
+
+//----------------------------------------------------------
+
+// foreach ($masyvas as $index_ii => &$value) {
+//     $value[] =  rand(5, 25);
+//     $value[] =  rand(5, 25);
+// }
+
 
 //------------------------- 2e
 
@@ -108,6 +141,31 @@ for ($i = 0; $i < 10; $i++) {
 }
 _d($naujasMasyvas, '2e');
 
+//----------------------------------------------------------
+
+// echo 'Antras namu darbas: E<br>';
+
+// $sum = 0;
+
+// foreach($masyvas as $x){
+//     foreach($x as $y){
+//         $sum += $y;
+//     }
+//     $naujasMasyvas[] = $sum;
+
+//     $sum = 0;
+
+// }
+
+// _d($naujasMasyvas, 'Naujas masyvas, Antras namu darbas: E');
+
+//----------------------------------------------------------
+
+// foreach ($masyvas as $i => $el) {
+//     $sumos[$i] = array_sum($el);
+// }
+
+// print_r($sumos);
 
 //------------------------- 3
 
