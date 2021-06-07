@@ -446,56 +446,101 @@ echo '<hr>';
 
 echo '<h3> Uzdavinys nr - 11 </h3>';
 
-$arr1 = [];
-$newArr = [];
+// $arr1 = [];
+// $newArr = [];
 
-for ($i = 0; $i < 101; $i++) {
-    $arr1[] = rand(0, 300);
+// for ($i = 0; $i < 101; $i++) {
+//     $arr1[] = rand(0, 300);
+// }
+
+// for ($k = 0; $k < 10; $k++) {
+//     foreach ($arr1 as $key => $value) {
+//         $same = false;
+//         foreach ($arr1 as $key2 => $value2) {
+//             if ($key != $key2) {
+//                 if ($value == $value2) {
+//                     $same = true;
+//                 }
+//             }
+//         }
+//         if ($same == true) {
+//             $arr1[$key] = rand(0, 300);
+//         }
+//     }
+// }
+
+// foreach ($arr1 as $value) {
+//     echo $value . ' ';
+// }
+
+// echo '<br><br>';
+
+// sort($arr1);
+// foreach ($arr1 as $value) {
+//     echo $value . ' ';
+// }
+
+// echo '<br><br>';
+
+// for ($i = 50, $j = 100; $i >= 0; $i--, $j -= 2) {
+//     $newArr[$i] = $arr1[$j];
+// }
+// for ($i = 51, $j = 99; $i <= 100; $i++, $j -= 2) {
+//     $newArr[$i] = $arr1[$j];
+// }
+
+// ksort($newArr);
+// print_r($newArr);
+
+// $sum1 = 0;
+// $sum2 = 0;
+
+// foreach ($newArr as $key => $value) {
+//     if ($key < 50) {
+//         $sum1 += $value;
+//     }
+//     if ($key > 50) {
+//         $sum2 += $value;
+//     }
+// }
+// $diff = abs($sum1 - $sum2);
+
+// echo "<br><br>Pirmos dalies suma: $sum1 <br> Antros dalies suma: $sum2 <br> Sumu skirtumas: $diff";
+
+//------------------------------------------------------------------
+
+$size = 101;
+$array11 = [];
+$newArray11 = [];
+while (count($array11) < $size) {
+    $array11[] = rand(0, 300);
+    $array11 = array_unique($array11);
 }
 
-for ($k = 0; $k < 10; $k++) {
-    foreach ($arr1 as $key => $value) {
-        $same = false;
-        foreach ($arr1 as $key2 => $value2) {
-            if ($key != $key2) {
-                if ($value == $value2) {
-                    $same = true;
-                }
-            }
-        }
-        if ($same == true) {
-            $arr1[$key] = rand(0, 300);
-        }
-    }
-}
-
-foreach ($arr1 as $value) {
+foreach ($array11 as $value) {
     echo $value . ' ';
 }
-
 echo '<br><br>';
 
-sort($arr1);
-foreach ($arr1 as $value) {
+sort($array11);
+foreach ($array11 as $value) {
     echo $value . ' ';
 }
-
 echo '<br><br>';
 
 for ($i = 50, $j = 100; $i >= 0; $i--, $j -= 2) {
-    $newArr[$i] = $arr1[$j];
+    $newArray11[$i] = $array11[$j];
 }
 for ($i = 51, $j = 99; $i <= 100; $i++, $j -= 2) {
-    $newArr[$i] = $arr1[$j];
+    $newArray11[$i] = $array11[$j];
 }
 
-ksort($newArr);
-print_r($newArr);
+ksort($newArray11);
+print_r($newArray11);
 
 $sum1 = 0;
 $sum2 = 0;
-
-foreach ($newArr as $key => $value) {
+foreach ($newArray11 as $key => $value) {
     if ($key < 50) {
         $sum1 += $value;
     }
@@ -508,38 +553,6 @@ $diff = abs($sum1 - $sum2);
 echo "<br><br>Pirmos dalies suma: $sum1 <br> Antros dalies suma: $sum2 <br> Sumu skirtumas: $diff";
 
 //------------------------------------------------------------------
-
-// $size = 101;
-// $array11 = [];
-// $newArray11 = [];
-// while (count($array11) < $size) {
-//     $array11[] = rand(0, 300);
-//     $array11 = array_unique($array11);
-// }
-
-// foreach ($array11 as $value) {
-//     echo $value . ' ';
-// }
-// echo '<br><br>';
-
-// sort($array11);
-// foreach ($array11 as $value) {
-//     echo $value . ' ';
-// }
-// echo '<br><br>';
-
-// for ($i = 50, $j = 100; $i >= 0; $i--, $j -= 2) {
-//     $newArray11[$i] = $array11[$j];
-//     $newArray11[101 - $i] = $array11[$j - 1];
-// }
-// // for ($i = 51, $j = 99; $i <= 100; $i++, $j -= 2) {
-// //     $newArray11[$i] = $array11[$j];
-// // }
-
-// ksort($newArray11);
-// print_r($newArray11);
-
-
 
 // $dydis = 101;
 // $random1 = [];

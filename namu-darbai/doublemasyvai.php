@@ -205,6 +205,22 @@ usort($array, "sorter");
 
 _d($array, '4');
 
+//----------------------------------------------------------
+
+// function proSort($a, $b)
+// {
+//     $ak = (int) in_array('K', $a);
+//     $bk = (int) in_array('K', $b);
+
+//     if ($ak + $bk == 1) {
+//         return $bk <=> $ak;
+//     }
+//     return count($a) <=> count($b);
+// }
+
+// usort($array, "proSort");
+
+// _d($array, '4');
 
 //------------------------- 5
 
@@ -347,14 +363,68 @@ _d($newArr, '9 - Array sort');
 
 //------------------------- 10
 
-$arejus = [];
-$val = rand();
-$color;
+echo '<h3> Uzdavinys nr - 10 </h3>';
+
+$val = ['#', '%', '+', '*', '@', '裡'];
+
+function color()
+{
+    $hex = '#';
+    for ($i = 0; $i < 6; $i++) {
+        $r = rand(0, 1);
+        $r == 0 ? $hex .= rand(0, 9) : $hex .= chr(rand(65, 70));
+    }
+    return $hex;
+}
 
 foreach (range(1, 10) as $key => $value) {
     foreach (range(1, 10) as $key2 => $value2) {
-        # code...
+        $arejus[$key][] = $val[rand(0, 5)] . '  ' . color();
     }
 }
+$div = '';
+foreach ($arejus as $ind => $valu) {
+    foreach ($valu as $ind2 => $valu2) {
+        $div .= '<span style="color:' . substr($valu2, 3) . '">' . substr($valu2, 0, 3) . '</span>';
+    }
+}
+echo "<div style='width: 200px; text-align: justify; padding: 5px; border: 1px solid black;'> $div </div>";
 
 _d($arejus, '10');
+
+echo '<hr>';
+
+//------------------------- 11
+
+echo '<h3> Uzdavinys nr - 11 </h3>';
+
+do {
+    $a = rand(0, 1000);
+    $b = rand(0, 1000);
+} while ($a == $b);
+$long = rand(10, 30);
+$sk1 = $sk2 = 0;
+echo '<h3>Skaičiai ' . $a . ' ir ' . $b . '</h3>';
+$c = [];
+for ($i = 0; $i < $long; $i++) {
+    $c[] = array_rand(array_flip([$a, $b]));
+}
+
+function x($a, $b)
+{
+    $a > $b;
+    return 1;
+}
+
+foreach ($c as $key => $value) {
+    $number[] += $value > min($c);
+}
+
+print_r($number);
+
+echo '<h4>Masyvas:</h4>';
+echo '<pre>';
+print_r($c);
+echo '</pre>';
+
+echo '<h3>Skaičius ' . $a . ' yra pakartotas ' . $sk1 . ' kartų, o skaičius ' . $b . ' - ' . $sk2 . ' kartų.</h3>';
