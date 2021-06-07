@@ -531,6 +531,31 @@
 
 //---------------------------------------------------------------------
 
+// $height = 131;
+// $width = 50;
+// $diagRatio = $width / $height;
+
+// for ($y = 0; $y < $height / 2; $y++) {
+//     for ($x = 0; $x < $width; $x++) {
+//         if (($width - $x) <= $diagRatio  * ($y + $height / 2) - 1 && ($width - $x) >= $diagRatio  * ($height - ($y + $height / 2)) + 1) {
+//             echo '<span style="line-height: 3px; font-size: 16px; color: rgb(' . rand(0, 255) . ',' . rand(0, 255) . ',' . rand(0, 255) . ');">*</span>';
+//         } else {
+//             echo '<span style="line-height: 3px; font-size: 16px; color: white;">*</span>';
+//         }
+//     }
+//     echo '<span style="font-size: 1px;"><br></span>';
+// }
+// for ($y = $height / 2; $y < $height; $y++) {
+//     for ($x = 0; $x < $width; $x++) {
+//         if (($x >= $diagRatio  * ($y - $height / 2) + 1 && $x <= $diagRatio  * ($height - ($y - $height / 2)) - 1)) {
+//             echo '<span style="line-height: 3px; font-size: 16px; color: rgb(' . rand(0, 255) . ',' . rand(0, 255) . ',' . rand(0, 255) . ');">*</span>';
+//         } else {
+//             echo '<span style="line-height: 3px; font-size: 16px; color: white;">*</span>';
+//         }
+//     }
+//     echo '<span style="font-size: 1px;"><br></span>';
+// }
+
 // echo '<hr>';
 
 # 9
@@ -685,35 +710,19 @@
 //     }
 // }
 
-// echo $stringas2;
-// echo '<br>';
-// echo '<br>';
+// echo "Pirminiai skaiciai - $stringas2";
 
-// $arr2 = [];
 // $explode2 = explode(' ', $stringas2);
-// $stringas3 = '';
 
-// for ($i = 0; $i < count($explode2) - 1; $i++) {
-//     array_push($arr2, $explode2[$i]);
-// }
+// echo '<br>';
+// echo '<br>';
+
 // sort($explode2);
 
-
-// for ($i = 1; $i < count($explode2); $i++) {
-//     print_r($explode[$i] . ' ');
-//     $stringas3 .= $explode[$i] . ' ';
+// echo 'Surusiuoti pirminiai skaiciai - ';
+// foreach ($explode2 as $key => $value) {
+//     echo $value . ' ';
 // }
-
-// echo '<br>';
-// echo '<br>';
-// echo $stringas3;
-
-
-
-
-
-// print_r($arr);
-// print_r($explode2);
 
 //---------------------------------------------------------------------
 

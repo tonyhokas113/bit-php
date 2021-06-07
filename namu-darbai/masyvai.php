@@ -1,3 +1,4 @@
+<body style="background-color:FFFFE0"> </body>
 <?php
 
 ############################### 1
@@ -41,6 +42,28 @@ $key = array_search($max, $array);
 
 echo "Indeksas: $key, Reiksme: $max";
 
+// v2
+
+$max = 5;
+$indexes = [];
+
+foreach ($array as $key => $value) {
+    if ($value > $max) {
+        $max = $value;
+        $indexes = [];
+    }
+    if ($value == $max) {
+        $indexes[] = $key;
+    }
+}
+
+echo "<br> Didziausias skaicius $max<br>";
+echo 'Kuriuose indeksuose yra si reiksme: ';
+foreach ($indexes as $key => $value) {
+    echo $value . ' ';
+}
+
+
 //---------------------------------------------------------------
 
 echo '<br><br><b> 2c </b><br>';
@@ -48,7 +71,7 @@ echo '<br><br><b> 2c </b><br>';
 $sum = 0;
 
 foreach ($array as $i => $value) {
-    if ($i % 2 == 0) {
+    if ($i % 2 === 0) {
         $sum += $value;
     }
 }
@@ -87,10 +110,10 @@ $even = [];
 $odd = [];
 
 foreach ($array as $i => $value) {
-    if ($i % 2 == 0) {
+    if ($i % 2 === 0) {
         $even[] = $value;
     }
-    if ($i % 2 != 0) {
+    if ($i % 2 !== 0) {
         $odd[] = $value;
     }
 }
@@ -112,22 +135,33 @@ foreach ($odd as $key => $value) {
 echo '<br><br><b> 2g </b><br>';
 
 foreach ($array as $i => $value) {
-    if ($i % 2 == 0 && $value > 15) {
+    if ($i % 2 === 0 && $value > 15) {
         $value = 0;
     }
     echo $value . ' ';
 }
 
+// v2 
+
+// foreach ($masyvas3 as $key => &$value) {
+//     if ($value > 15) {
+//         $value = 0;
+//     }
+// }
+
+// unset($value);
+
 //---------------------------------------------------------------
 
-echo '<br><br><b> 2h </b><br>';      //????????????????????????
+echo '<br><br><b> 2h </b><br>';         // 16:30 kodas.
 
 $min = 0;
+$found = false;
 
 foreach ($array as $i => $value) {
-    if ($value > 10) {
+    if ($value > 10 && $found == false) {
         $min = $i;
-        break;
+        $found = true;
     }
 }
 
@@ -138,7 +172,7 @@ echo $min;
 echo '<br><br><b> 2i </b><br>';
 
 foreach ($array as $i => $value) {
-    if ($i % 2 == 0) {
+    if ($i % 2 === 0) {
         unset($array[$i]);
     }
 }
@@ -203,14 +237,14 @@ $array2 = [];
 $array3 = [];
 $final = [];
 $original = [];
+$original2 = [];
+$uni = 0;
+$uni2 = 0;
 
 for ($i = 0; $i < 200; $i++) {
     $array1[] = chr(rand(65, 68));
     $array2[] = chr(rand(65, 68));
     $array3[] = chr(rand(65, 68));
-}
-
-for ($i = 0; $i < 200; $i++) {
     $final[] = $array1[$i] . $array2[$i] . $array3[$i];
 }
 
@@ -225,6 +259,22 @@ for ($i = 0; $i < count($final); $i++) {
     }
     if ($add == true) {
         $original[] = $final[$i];
+        $uni++;
+    }
+}
+
+for ($i = 0; $i < count($final); $i++) {
+    $add = true;
+    if (count($original2) > 1) {
+        for ($j = 0; $j < count($original2) - 1; $j++) {
+            if ($original2[$j] == $final[$i]) {
+                $add = false;
+            }
+        }
+    }
+    if ($add == true) {
+        $original2[] = $final[$i];
+        $uni2++;
     }
 }
 
@@ -235,7 +285,15 @@ foreach ($final as $key => $value) {
 echo '<br>';
 echo '<br>';
 
+echo "Unikalios reiksmes ($uni) : ";
 foreach ($original as $key => $value) {
+    echo $value . ' ';
+}
+
+echo '<br>';
+
+echo "Unikalios kombinacijos ($uni2) : ";
+foreach ($original2 as $key => $value) {
     echo $value . ' ';
 }
 
@@ -384,6 +442,110 @@ print_r($arr);
 
 echo '<hr>';
 
-##########################  10
+##########################  11
 
 echo '<h3> Uzdavinys nr - 11 </h3>';
+
+$arr1 = [];
+$newArr = [];
+$continue = true;
+
+// while ($continue == true) {
+
+for ($i = 0; $i < 101; $i++) {
+    $arr1[] = rand(0, 300);
+}
+
+for ($k = 0; $k < 10; $k++) {
+    foreach ($arr1 as $key => $value) {
+        $same = false;
+        foreach ($arr1 as $key2 => $value2) {
+            if ($key != $key2) {
+                if ($value == $value2) {
+                    $same = true;
+                }
+            }
+        }
+        if ($same == true) {
+            $arr1[$key] = rand(0, 300);
+        }
+        // echo $value . ' ';
+    }
+}
+
+foreach ($arr1 as $key => $value) {
+    echo $value . ' ';
+}
+
+echo '<br>';
+echo '<br>';
+
+sort($arr1);
+
+foreach ($arr1 as $key => $value) {
+    echo $value . ' ';
+}
+
+echo '<br>';
+echo '<br>';
+
+for ($i = 50, $j = 100; $i >= 0; $i--, $j -= 2) {
+    $newArr[$i] = $arr1[$j];
+}
+for ($i = 51, $j = 99; $i <= 100; $i++, $j -= 2) {
+    $newArr[$i] = $arr1[$j];
+}
+
+ksort($newArr);
+print_r($newArr);
+
+$sum1 = 0;
+$sum2 = 0;
+
+foreach ($newArr as $key => $value) {
+    if ($key < 50) {
+        $sum1 += $value;
+    }
+    if ($key > 50) {
+        $sum2 += $value;
+    }
+}
+$diff = abs($sum1 - $sum2);
+if (abs($sum1 - $sum2) <= 30) {
+    $continue == false;
+}
+echo "<br><br>Pirmos dalies suma: $sum1 <br> Antros dalies suma: $sum2 <br> Sumu skirtumas: $diff";
+// }
+
+
+
+
+
+
+
+
+// $dydis = 101;
+// $random1 = [];
+// while (count($random1) < $dydis) {
+//     array_push($random1, rand(0, 300));
+//     $random1 = array_unique($random1);
+// }
+// print_r($random1);
+// $maxval = max($random1);
+// $isrusiuotas = [];
+// $isrusiuotas[$dydis / 2] = $maxval;
+// unset($random1[array_keys($random1, $maxval)[0]]);
+// echo '<hr>';
+// $middle = ceil($dydis / 2);
+// for ($i = 0; $i < $middle - 1; $i++) {
+//     $maxval = max($random1);
+//     $isrusiuotas[($dydis / 2) + $i + 1] = $maxval;
+//     unset($random1[array_keys($random1, $maxval)[0]]);
+//     if (!empty($random1)) {
+//         $maxval = max($random1);
+//         $isrusiuotas[($dydis / 2) - $i - 1] = $maxval;
+//         unset($random1[array_keys($random1, $maxval)[0]]);
+//     }
+// }
+// print_r($isrusiuotas);
+// echo '<br>';
