@@ -208,39 +208,6 @@
 
 //---------------------------------------------------------------------
 
-// <style>
-//   .kvadratas {
-//     white-space: nowrap;
-//   }
-//   .kvadratas span{
-//     padding: 3px;
-//   }
-// </style>
-
-// <?php
-// echo "<div class='kvadratas' id='kvadratas'>";
-// for ($i = 0 ; $i < $krastine ; $i++)
-// {
-
-//     for ($j = 0 ; $j < $krastine ; $j++)
-//     {
-//         if($i==$j){
-//             echo '<span class="red">* </span>';
-//         }
-//         elseif($i+$j == $krastine-1){
-//             echo '<span class="red">* </span>';
-//         }
-//         else {
-//          echo '<span>* </span>';
-//         }
-//     }
-//     echo '<br>';
-// }
-// echo '</div>';
-// echo '<hr>';
-
-//---------------------------------------------------------------------
-
 
 // echo '<hr>';
 
@@ -415,59 +382,25 @@
 
 // echo '<hr>';
 
-# 8 !!!!
+# 8 
 
 // echo '<h3> 8. </h3>';
 
-// $x = [];
-// $br = '<br>';
-
-// for ($i = 0; $i <= 121; $i++) {
-//     $r = rand(0, 255);
-//     $g = rand(0, 255);
-//     $b = rand(0, 255);
-//     // $x .= "<div style = 'color: rgb($r,$g,$b)'> * </div>";
-//     array_push($x, "<span style = 'color: rgb($r,$g,$b)'> * </span>");
-// }
-
-
-// $m = [];
-// $stars = 1;
-
-// for ($i = 0, $j = 1; $i < 21; $i++) {
-//     for ($p = 0; $p < $j; $p++) { 
-
-//         if ($i <= 11) {
-//             array_push($m, "<div> * </div>");
+// $body = '';
+// for ($i = 0; $i < 21; $i++) {
+//     $star = '';
+//     if ($i <= 11) {
+//         for ($m = 0; $m < $i; $m++) {
+//             $star .= '<span style = "color: rgb(' . rand(0, 255) . ',' . rand(0, 255) . ',' . rand(0, 255) . ')"> * </span>';
+//         }
+//     } else {
+//         for ($m = 21 - $i; $m > 0; $m--) {
+//             $star .= '<span style = "color: rgb(' . rand(0, 255) . ',' . rand(0, 255) . ',' . rand(0, 255) . ')"> * </span>';
 //         }
 //     }
+//     $body .= $star . '<br>';
 // }
-
-
-
-// print_r($x);
-// echo "<div style = 'width: 120px; padding-left: 100px; word-break: break-all;'> $x </div>";
-
-//121
-
-
-// $x = '';
-
-// for ($i = 0; $i < 121; $i++) {
-//     $r = rand(0, 255);
-//     $g = rand(0, 255);
-//     $b = rand(0, 255);
-//     $x .= "<span style = 'color: rgb($r,$g,$b)'> * </span>";
-// array_push($x, "<span style = 'color: rgb($r,$g,$b)'> * </span>");
-// }
-
-// for ($i = 0; $i < 21; $i++) { 
-//     # code...
-// }
-
-// echo $x;
-
-// vietoje span html elemento panaudoti div elementa(nes jis yra block).
+// echo "<div style = 'text-align: center; line-height: 10px; width: 300px;'> $body </div>";
 
 //---------------------------------------------------------------------
 
@@ -528,6 +461,33 @@
 // }
 
 // echo '</div>';
+
+//---------------------------------------------------------------------
+
+// $height = 131;
+// $width = 50;
+// $diagRatio = $width / $height;
+
+// for ($y = 0; $y < $height / 2; $y++) {
+//     for ($x = 0; $x < $width; $x++) {
+//         if (($width - $x) <= $diagRatio  * ($y + $height / 2) - 1 && ($width - $x) >= $diagRatio  * ($height - ($y + $height / 2)) + 1) {
+//             echo '<span style="line-height: 3px; font-size: 16px; color: rgb(' . rand(0, 255) . ',' . rand(0, 255) . ',' . rand(0, 255) . ');">*</span>';
+//         } else {
+//             echo '<span style="line-height: 3px; font-size: 16px; color: white;">*</span>';
+//         }
+//     }
+//     echo '<span style="font-size: 1px;"><br></span>';
+// }
+// for ($y = $height / 2; $y < $height; $y++) {
+//     for ($x = 0; $x < $width; $x++) {
+//         if (($x >= $diagRatio  * ($y - $height / 2) + 1 && $x <= $diagRatio  * ($height - ($y - $height / 2)) - 1)) {
+//             echo '<span style="line-height: 3px; font-size: 16px; color: rgb(' . rand(0, 255) . ',' . rand(0, 255) . ',' . rand(0, 255) . ');">*</span>';
+//         } else {
+//             echo '<span style="line-height: 3px; font-size: 16px; color: white;">*</span>';
+//         }
+//     }
+//     echo '<span style="font-size: 1px;"><br></span>';
+// }
 
 //---------------------------------------------------------------------
 
