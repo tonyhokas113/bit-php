@@ -207,20 +207,20 @@ _d($array, '4');
 
 //----------------------------------------------------------
 
-// function proSort($a, $b)
-// {
-//     $ak = (int) in_array('K', $a);
-//     $bk = (int) in_array('K', $b);
+function proSort($a, $b)
+{
+    $ak = (int) in_array('K', $a);
+    $bk = (int) in_array('K', $b);
 
-//     if ($ak + $bk == 1) {
-//         return $bk <=> $ak;
-//     }
-//     return count($a) <=> count($b);
-// }
+    if ($ak + $bk == 1) {
+        return $bk <=> $ak;
+    }
+    return count($a) <=> count($b);
+}
 
-// usort($array, "proSort");
+usort($array, "proSort");
 
-// _d($array, '4');
+_d($array, '4');
 
 //------------------------- 5
 
@@ -241,6 +241,25 @@ foreach (range(1, 30) as $key => $_) {
 
 _d($arr, '5');
 
+//----------------------------------------------------------
+
+// $masyvas = [];
+// $count = 0;
+
+// do {
+//     $count++;
+//     $uid = rand(1, 50);
+//     foreach ($masyvas as $user) {
+//         if ($user['user_id'] == $uid) {
+//             continue 2;
+//         }
+//     }
+
+//     $masyvas[] = [
+//         'user_id' => $uid,
+//         'place_in_row' => rand(0, 100)
+//     ];
+// } while (count($masyvas) < 30);
 
 //------------------------- 6
 
@@ -273,6 +292,22 @@ function placeSort($a, $b)
 usort($arr, "placeSort");
 
 _d($arr, '6 - (PLACE)');
+
+//----------------------------------------------------------
+
+// usort($arr, function ($a, $b) {
+//     return $a <=> $b;
+// });
+
+// _d($arr);
+// print_r($arr);
+
+// usort($arr, function ($a, $b) {
+//     return $a['place_in_row'] <=> $b['place_in_row'];
+// });
+
+// _d($arr);
+// print_r($arr);
 
 
 //------------------------- 7
@@ -360,6 +395,27 @@ usort($newArr, "mySort");
 _d($valueSum, '9 - Sum');
 _d($newArr, '9 - Array sort');
 
+//----------------------------------------------------------
+
+// usort($masyvas, function($a, $b) {
+//     $asum = 0;
+//     if(is_array($a)) {
+//         foreach($a as $value) {
+//             $asum += $value
+//         }
+//         $a = $asum;
+//     }
+
+//     $bsum = 0; 
+//     if(is_array($b)) {
+//         foreach($b as $value) {
+//             $bsum += $value;
+//         }
+//         $b = $bsum;
+//     }
+//     return $a <=> $b;
+// }
+// );
 
 //------------------------- 10
 
@@ -397,34 +453,3 @@ echo '<hr>';
 //------------------------- 11
 
 echo '<h3> Uzdavinys nr - 11 </h3>';
-
-do {
-    $a = rand(0, 1000);
-    $b = rand(0, 1000);
-} while ($a == $b);
-$long = rand(10, 30);
-$sk1 = $sk2 = 0;
-echo '<h3>Skaičiai ' . $a . ' ir ' . $b . '</h3>';
-$c = [];
-for ($i = 0; $i < $long; $i++) {
-    $c[] = array_rand(array_flip([$a, $b]));
-}
-
-function x($a, $b)
-{
-    $a > $b;
-    return 1;
-}
-
-foreach ($c as $key => $value) {
-    $number[] += $value > min($c);
-}
-
-print_r($number);
-
-echo '<h4>Masyvas:</h4>';
-echo '<pre>';
-print_r($c);
-echo '</pre>';
-
-echo '<h3>Skaičius ' . $a . ' yra pakartotas ' . $sk1 . ' kartų, o skaičius ' . $b . ' - ' . $sk2 . ' kartų.</h3>';

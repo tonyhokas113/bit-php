@@ -37,6 +37,14 @@ foreach (range(1, 10) as $keyBig => $_) {
     }
 }
 
+_d($masyvas2, 'Labas');
+foreach ($masyvas2 as &$mazas) {
+    usort($mazas, function ($a, $b) {
+        return $a <=> $b;
+    });
+}
+_d($masyvas2, 'Labas2');
+
 
 
 usort($masyvas2, function ($a, $b) {
@@ -52,13 +60,18 @@ usort($masyvas2, function ($a, $b) {
 
 _d($masyvas2);
 
+
 $m = [
     ['A', 'B'],
-    ['u', 'P'],
+    ['U', 'P'],
     ['T', 'H'],
     ['C', 'A']
-]
+];
 
-usort($m, function($a, $b) {
-    return $a <=> $b;
+_d($m);
+
+usort($m, function ($a, $b) {
+    return - ($a[0] . $a[1] <=> $b[0] . $b[1]);
 });
+
+_d($m);
