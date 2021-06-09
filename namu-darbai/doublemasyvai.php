@@ -207,20 +207,20 @@ _d($array, '4');
 
 //----------------------------------------------------------
 
-function proSort($a, $b)
-{
-    $ak = (int) in_array('K', $a);
-    $bk = (int) in_array('K', $b);
+// function proSort($a, $b)
+// {
+//     $ak = (int) in_array('K', $a);
+//     $bk = (int) in_array('K', $b);
 
-    if ($ak + $bk == 1) {
-        return $bk <=> $ak;
-    }
-    return count($a) <=> count($b);
-}
+//     if ($ak + $bk == 1) {
+//         return $bk <=> $ak;
+//     }
+//     return count($a) <=> count($b);
+// }
 
-usort($array, "proSort");
+// usort($array, "proSort");
 
-_d($array, '4');
+// _d($array, '4');
 
 //------------------------- 5
 
