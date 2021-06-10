@@ -1,4 +1,5 @@
 <?php
+
 _d($_SERVER['REQUEST_METHOD'], 'metodas ---->');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -7,7 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header('Location: http://localhost/barsukas/10/?ok'); // get
     die;
 }
-
 
 ?>
 
@@ -30,6 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a href="?rodyti=zuikis&puslapis=1">Zuikiai 1</a>
         <a href="?rodyti=zuikis&puslapis=2">Zuikiai 2</a>
     </h2>
+
+
     <?php
 
     _d($_GET, 'Masyvas $_GET ---->');
@@ -50,9 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
         echo 'Sveiki atvykę į mūsų puslapį';
     }
-
-
-
 
     ?>
 
