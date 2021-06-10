@@ -9,17 +9,7 @@
 </head>
 
 <body>
-    <form action="" method="get">
-        Jūsų vardas
-        <br>
-        <input type="text" name="vardas" value="">
-        <br>
-        Jūsų el. pašto adresas:
-        <br>
-        <input type="text" name="elpastas" value="">
-        <br>
-        <input type="submit" value="Išsiųsti">
-    </form>
+    <h1>Labas</h1>
     <img src="../09/triusis.png" alt="rabbit">
 </body>
 
