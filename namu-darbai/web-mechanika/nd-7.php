@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <form action="http://127.0.0.1/bit-php/namu-darbai/web-mechanika/nd-7.php" method="get">
+    <form action="" method="get">
         <button name="btn1" type="submit">GET</button>
     </form>
     <br>
-    <form action="http://127.0.0.1/bit-php/namu-darbai/web-mechanika/nd-7.php" method="post">
+    <form action="http://127.0.0.1/bit-php/namu-darbai/web-mechanika/nd-7.php?btn1=" method="post">
         <button name="btn2" type="submit">POST</button>
     </form>
 </body>
@@ -21,16 +21,18 @@
 </html>
 
 <?php
-
 if (isset($_GET['btn1'])) {
     echo '<body style="background-color: green">';
 }
 
 if (isset($_POST['btn2'])) {
     echo '<body style="background-color: yellow">';
+    sleep(1);
 }
 
-if (isset($_GET['btn2'])) {
-    header('Location: http://127.0.0.1/bit-php/namu-darbai/web-mechanika/nd-7.php?btn1=');
-    die;
-}
+// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//     sleep(1);
+//     header('Location: http://127.0.0.1/bit-php/namu-darbai/web-mechanika/nd-7.php?btn1=');
+//     die;
+// }
+_d($_POST);
