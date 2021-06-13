@@ -39,7 +39,4 @@
 if (isset($_GET['color'])) {
     $color = $_GET['color'];
     echo "<body style=\"background-color: $color\">";
-    _d($_GET['color']);
 }
-
-?>

@@ -1,11 +1,11 @@
 <?php
 if (isset($_GET['link'])) {
-    header("Location: http://127.0.0.1/bit-php/namu-darbai/web-mechanika/red.php");
+    header("Location: ./red.php");
+    die;
 } else {
-    echo '<a href="http://127.0.0.1/bit-php/namu-darbai/web-mechanika/blue.php?link=1">Link</a>';
+    echo '<a href="./blue.php?link=1">Link</a>';
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">

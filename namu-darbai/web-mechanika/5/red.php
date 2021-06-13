@@ -1,8 +1,9 @@
 <?php
 if (isset($_GET['link'])) {
-    header("Location: http://127.0.0.1/bit-php/namu-darbai/web-mechanika/blue.php");
+    header("Location: ./blue.php");
+    die;
 } else {
-    echo '<a href="http://127.0.0.1/bit-php/namu-darbai/web-mechanika/red.php?link=1">Link</a>';
+    echo '<a href="./red.php?link=1">Link</a>';
 }
 ?>
 

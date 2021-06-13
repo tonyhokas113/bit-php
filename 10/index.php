@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     _d($_POST, 'issiusti duomenys');
 
-    header('Location: http://localhost/barsukas/10/?ok'); // get
+    header('Location: http://127.0.0.1/bit-php/10/?ok'); // get metodas
     die;
 }
 
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <h1>Voverės ir Zuikiai</h1>
     <h2>
-        <a href="http://localhost/barsukas/10/">Namai</a>
+        <a href="http://127.0.0.1/bit-php/10/">Namai</a>
         <a href="?rodyti=vovere&puslapis=1">Voverės 1</a>
         <a href="?rodyti=vovere&puslapis=2">Voverės 2</a>
         <a href="?rodyti=zuikis&puslapis=1">Zuikiai 1</a>
@@ -55,13 +55,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     ?>
 
-    <form style="margin:30px;" action="http://localhost/barsukas/10/" method="get">
+    <form style="margin:30px;" action="http://127.0.0.1/bit-php/10/" method="get">
         <h3>GET</h3>
         Ką rodyti: <input type="text" name="rodyti">
         Puslapis: <input type="text" name="puslapis">
         <button type="submit">žiūrėti</button>
     </form>
-    <form style="margin:30px;" action="http://localhost/barsukas/10/" method="post">
+    <form style="margin:30px;" action="http://127.0.0.1/bit-php/10/" method="post">
         <h3>POST</h3>
         Ką rodyti: <input type="text" name="rodyti">
         Puslapis: <input type="text" name="puslapis">

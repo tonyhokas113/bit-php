@@ -9,7 +9,7 @@
         }
     } else {
         $bckg = 'white';
-        echo '<span> Pažymėta:' . count($_POST["check"]) . '</span>';
+        echo '<span> Pažymėta: ' . count($_POST["check"]) . '</span>';
     }
 
     ?>

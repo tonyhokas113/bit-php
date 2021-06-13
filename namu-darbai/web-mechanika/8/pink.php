@@ -9,16 +9,9 @@
 </head>
 
 <body style="background-color: pink">
-    <form action="http://127.0.0.1/bit-php/namu-darbai/web-mechanika/pink.php" method="post">
+    <form action="./rose.php" method="post">
         <button name="rose" type="submit">GO TO ROSE</button>
     </form>
 </body>
 
 </html>
-
-<?php
-
-if (isset($_POST['rose'])) {
-    header('Location: http://127.0.0.1/bit-php/namu-darbai/web-mechanika/rose.php');
-    die;
-}

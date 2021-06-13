@@ -13,7 +13,7 @@ if (!isset($_POST['check'])) {
 } else {
     $bckg = 'white';
     $generated = $_GET['count'];
-    echo '<span> Pažymėta:' . count($_POST["check"]) . ' Sugeneruota: ' . $generated . '</span>';
+    echo '<span> Pažymėta: ' . count($_POST["check"]) . ' Sugeneruota: ' . $generated . '</span>';
 }
 
 ?>

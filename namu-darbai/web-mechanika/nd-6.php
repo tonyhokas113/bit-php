@@ -9,12 +9,12 @@
 </head>
 
 <body>
-    <form action="http://127.0.0.1/bit-php/namu-darbai/web-mechanika/nd-6.php" method="get">
-        <button name="btn1" type="submit">GET</button>
+    <form action="./nd-6.php" method="get">
+        <button type="submit">GET</button>
     </form>
     <br>
-    <form action="http://127.0.0.1/bit-php/namu-darbai/web-mechanika/nd-6.php" method="post">
-        <button name="btn2" type="submit">POST</button>
+    <form action="./nd-6.php" method="post">
+        <button type="submit">POST</button>
     </form>
 </body>
 
@@ -22,10 +22,8 @@
 
 <?php
 
-if (isset($_GET['btn1'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     echo '<body style="background-color: green">';
-}
-
-if (isset($_POST['btn2'])) {
+} else {
     echo '<body style="background-color: yellow">';
 }

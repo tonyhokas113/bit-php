@@ -40,8 +40,8 @@
 <body>
     <h2 style="color: white; text-align: center;">Uždavinys nr.: 1</h2>
     <div>
-        <a href="http://127.0.0.1/bit-php/namu-darbai/web-mechanika/nd-1.php">Black</a>
-        <a href="http://127.0.0.1/bit-php/namu-darbai/web-mechanika/nd-1.php?color=1">Red</a>
+        <a href="http://127.0.0.1/bit-php/namu-darbai/web-mechanika/nd-1.php/">Black</a>
+        <a href="http://127.0.0.1/bit-php/namu-darbai/web-mechanika/nd-1.php/?color=1">Red</a>
     </div>
 </body>
 
@@ -54,5 +54,3 @@ if (isset($_GET['color']) && $_GET['color'] == 1) {
 } else {
     echo '<body style="background-color:black">';
 }
-
-?>
