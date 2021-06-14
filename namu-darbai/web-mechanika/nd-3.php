@@ -28,7 +28,7 @@
     <form action="http://127.0.0.1/bit-php/namu-darbai/web-mechanika/nd-3.php" method="get">
         <label for="color">Įveskite spalvą</label>
         <input type="text" class="color" placeholder="Spalva" name="color">
-        <button type="submit">Pateikti</button>
+        <button type="submit">Pakeisti</button>
     </form>
 </body>
 
