@@ -2,7 +2,7 @@
 session_start();
 function redirect()
 {
-    header('Location: http://localhost/barsukas/12/agurkai/');
+    header('Location: http://127.0.0.1/bit-php/12/agurkai/');
     die;
 }
 
@@ -12,7 +12,7 @@ if (!file_exists(__DIR__ . '/boxes.json')) {
     file_put_contents(__DIR__ . '/boxes.json', json_encode([]));
 }
 $boxes = json_decode(file_get_contents(__DIR__ . '/boxes.json'), 1);
-//
+
 
 //Routerio Prosenelis
 
