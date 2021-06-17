@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/errMsgFunc.php';
+require __DIR__ . '/functions.php';
 
 $id = $_GET['id'] ?? 0;
 foreach ($accounts as $index => $account) {

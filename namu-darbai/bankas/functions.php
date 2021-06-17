@@ -25,3 +25,16 @@ function setMessage(string $msg, $style)
     $_SESSION['msg'] = $msg;
     $_SESSION['style'] = $style;
 }
+
+function generateIban()
+{
+    $iban = 'LT10 1234 5';
+    for ($i = 0; $i < 13; $i++) {
+        if ($i == 3 || $i == 8) {
+            $iban .= ' ';
+        } else {
+            $iban .= rand(0, 9);
+        }
+    }
+    return $iban;
+}

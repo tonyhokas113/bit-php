@@ -1,7 +1,9 @@
 <?php
-
-require __DIR__ . '/errMsgFunc.php';
-
+require __DIR__ . '/functions.php';
+if (!isset($_SESSION['loggedIn'])) {
+    header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/');
+    die;
+}
 function mySort($a, $b)
 {
     if ($a['surname'] > $b['surname']) {
@@ -9,7 +11,6 @@ function mySort($a, $b)
     }
 }
 usort($accounts, 'mySort');
-
 ?>
 
 <!DOCTYPE html>
