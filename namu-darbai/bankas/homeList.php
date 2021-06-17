@@ -1,8 +1,6 @@
 <?php
 
-if (isset($_GET['error']) && $_GET['error'] == 'accFull') {
-    $error =  '<span style="color: red;">Sąskaitų, kuriose yra pinigų ištrinti negalima!</span>';
-}
+require __DIR__ . '/errMsgFunc.php';
 
 function mySort($a, $b)
 {
@@ -27,7 +25,7 @@ usort($accounts, 'mySort');
 <body>
     <?php include __DIR__ . '/menu.php' ?>
     <h1>Sąskaitų sąrašas</h1>
-    <?= $error ?? '' ?>
+    <?php include __DIR__ . '/errorMsg.php' ?>
     <ul>
         <?php foreach ($accounts as $account) : ?>
             <li>

@@ -1,3 +1,9 @@
+<?php
+
+require __DIR__ . '/errMsgFunc.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +17,7 @@
 <body>
     <?php include __DIR__ . '/menu.php' ?>
     <h1>Pridėti lėšas</h1>
+    <?php include __DIR__ . '/errorMsg.php' ?>
     <ul>
         <?php foreach ($accounts as $account) : ?>
             <li>

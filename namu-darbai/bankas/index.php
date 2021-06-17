@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 if (!file_exists(__DIR__ . '/data.json')) {
     file_put_contents(__DIR__ . '/data.json', json_encode([]));
 }

@@ -1,8 +1,6 @@
 <?php
 
-if (isset($_GET['rem']) &&  $_GET['rem'] == 'minus') {
-    $error = '<span style="color: red;">Nepakankamas sąskaitos likutis!</span>';
-}
+require __DIR__ . '/errMsgFunc.php';
 
 ?>
 
@@ -19,7 +17,7 @@ if (isset($_GET['rem']) &&  $_GET['rem'] == 'minus') {
 <body>
     <?php include __DIR__ . '/menu.php' ?>
     <h1>Nuskaičiuoti lėšas</h1>
-    <?= $error ?? '' ?>
+    <?php include __DIR__ . '/errorMsg.php' ?>
     <ul>
         <?php foreach ($accounts as $account) : ?>
             <li>

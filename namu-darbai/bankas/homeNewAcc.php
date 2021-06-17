@@ -1,11 +1,6 @@
 <?php
 
-if (isset($_GET['added']) && $_GET['added'] == true) {
-    $info = '<span>Sąskaita pridėta</span>';
-}
-if (isset($_GET['added']) && $_GET['added'] == false) {
-    $info = '<span>Toks asmens kodas jau yra!</span>';
-}
+require __DIR__ . '/errMsgFunc.php';
 
 ?>
 
@@ -22,17 +17,17 @@ if (isset($_GET['added']) && $_GET['added'] == false) {
 <body>
     <?php include __DIR__ . '/menu.php' ?>
     <h1>Sukurti naują sąskaitą</h1>
-    <?= $info ?? '' ?>
+    <?php include __DIR__ . '/errorMsg.php' ?>
     <br>
     <span>Norint sukurti naują sąskaitą reikia užpildyti šią formą:</span>
     <form action="?dir=addAcc" method="post">
-        <label for="name">Įveskite savo vardą:</label>
+        <label for="name">Įveskite kliento vardą:</label>
         <input id="name" type="text" placeholder="Vardas" name="vardas">
         <br>
-        <label for="surname">Įveskite savo pavardę:</label>
+        <label for="surname">Įveskite kliento pavardę:</label>
         <input id="surname" type="text" placeholder="Pavardė" name="pavarde">
         <br>
-        <label for="id">Įveskite savo asmens kodą:</label>
+        <label for="id">Įveskite kliento asmens kodą:</label>
         <input id="id" type="text" placeholder="Asmens kodas" name="ak">
         <br>
         <button type="submit">Sukurti sąskaitą</button>
