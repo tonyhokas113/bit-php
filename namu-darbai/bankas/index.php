@@ -1,55 +1,47 @@
 <?php
 session_start();
-require __DIR__ . '/functions.php';
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['logout'])) {
-    unset($_SESSION['loggedIn'], $_SESSION['username']);
-    setMessage('Atsijungta sėkmingai', 'color: green;');
-    header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/index.php');
+if (!isset($_SESSION['loggedIn'])) {
+    header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/login.php');
     die;
 }
-if (isset($_POST['user'])) {
-    $users = json_decode(file_get_contents(__DIR__ . '/bankUsers.json'), 1);
-    foreach ($users as $user) {
-        if ($user['name'] == $_POST['user']) {
-            if ($user['pass'] == md5($_POST['password'])) {
-                $_SESSION['loggedIn'] = 1;
-                $_SESSION['user'] = $user['name'];
-                setMessage('Labas, ' . $user['name'], 'color: green;');
-                header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/home.php');
-                die;
-            }
-        }
-        // else {
-        //     setMessage('Vartotojas' . $user['name'] . 'nerastas', 'color: red;');
-        //     header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/index.php');
-        //     die;
-        // }
-    }
+if (!file_exists(__DIR__ . '/data.json')) {
+    file_put_contents(__DIR__ . '/data.json', json_encode([]));
 }
-?>
+$accounts = json_decode(file_get_contents(__DIR__ . '/data.json'), 1);
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>$BANKAS$</h1>
-    <?php include __DIR__ . '/errorMsg.php' ?>
-    <div>
-        <form action="" method="post">
-            <label for="user">Prisijungimo vardas</label>
-            <input id="user" type="text" name="user">
-            <label for="psw">Slaptažodis</label>
-            <input id="psw" type="password" name="password">
-            <button type="submit">Prisijungti</button>
-        </form>
-    </div>
-</body>
-
-</html>
+// Home page
+if (!isset($_GET['dir'])) {
+    require __DIR__ . '/menu.php';
+}
+// Account list page
+elseif ($_GET['dir'] == 'homeList') {
+    require __DIR__ . '/homeList.php';
+}
+// Create account page
+elseif ($_GET['dir'] == 'homeNewAcc') {
+    require __DIR__ . '/homeNewAcc.php';
+}
+// Add acc
+elseif ($_GET['dir'] == 'addAcc') {
+    require __DIR__ . '/addAcc.php';
+}
+// Add funds page
+elseif ($_GET['dir'] == 'homeAddFunds') {
+    require __DIR__ . '/homeAddFunds.php';
+}
+// Add funds
+elseif ($_GET['dir'] == 'addFunds') {
+    require __DIR__ . '/addFunds.php';
+}
+// Remove funds page
+elseif ($_GET['dir'] == 'homeRemFunds') {
+    require __DIR__ . '/homeRemFunds.php';
+}
+// Remove funds
+elseif ($_GET['dir'] == 'remFunds') {
+    require __DIR__ . '/remFunds.php';
+}
+// Dellete account
+elseif ($_GET['dir'] == 'delete') {
+    require __DIR__ . '/delAcc.php';
+}
