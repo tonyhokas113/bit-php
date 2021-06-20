@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require __DIR__ . '/functions.php';
 
 if ($_GET['dir'] == 'addAcc') {

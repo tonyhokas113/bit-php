@@ -1,4 +1,5 @@
 <?php
+session_start();
 require __DIR__ . '/functions.php';
 
 $id = $_GET['id'] ?? 0;

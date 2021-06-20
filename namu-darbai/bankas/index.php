@@ -1,28 +1,26 @@
 <?php
+session_start();
 require __DIR__ . '/functions.php';
-// session_start();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (isset($_POST['logout'])) {
-        unset($_SESSION['loggedIn'], $_SESSION['username']);
-        setMessage('Atsijungta sėkmingai', 'color: green;');
-        header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/index.php');
-        die;
-    }
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['logout'])) {
+    unset($_SESSION['loggedIn'], $_SESSION['username']);
+    setMessage('Atsijungta sėkmingai', 'color: green;');
+    header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/index.php');
+    die;
 }
 if (isset($_POST['user'])) {
     $users = json_decode(file_get_contents(__DIR__ . '/bankUsers.json'), 1);
     foreach ($users as $user) {
-        if ($user['user'] == $_POST['user']) {
-            if ($user['password'] == md5($_POST['password'])) {
+        if ($user['name'] == $_POST['user']) {
+            if ($user['pass'] == md5($_POST['password'])) {
                 $_SESSION['loggedIn'] = 1;
-                $_SESSION['user'] = $user['user'];
-                setMessage('Labas, ' . $user['user'], 'color: green;');
+                $_SESSION['user'] = $user['name'];
+                setMessage('Labas, ' . $user['name'], 'color: green;');
                 header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/home.php');
                 die;
             }
         }
         // else {
-        //     setMessage('Vartotojas' . $user['username'] . 'nerastas', 'color: red;');
+        //     setMessage('Vartotojas' . $user['name'] . 'nerastas', 'color: red;');
         //     header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/index.php');
         //     die;
         // }
@@ -43,7 +41,15 @@ if (isset($_POST['user'])) {
 <body>
     <h1>$BANKAS$</h1>
     <?php include __DIR__ . '/errorMsg.php' ?>
-    <?php include __DIR__ . '/loginMenu.php' ?>
+    <div>
+        <form action="" method="post">
+            <label for="user">Prisijungimo vardas</label>
+            <input id="user" type="text" name="user">
+            <label for="psw">Slaptažodis</label>
+            <input id="psw" type="password" name="password">
+            <button type="submit">Prisijungti</button>
+        </form>
+    </div>
 </body>
 
 </html>

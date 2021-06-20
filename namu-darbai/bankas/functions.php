@@ -1,5 +1,4 @@
 <?php
-session_start();
 function getMessage()
 {
     if (!isset($_SESSION['msg'])) {

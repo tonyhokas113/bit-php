@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/functions.php';
 if (!isset($_SESSION['loggedIn'])) {
-    header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/');
+    header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/index.php');
     die;
 }
 function mySort($a, $b)
