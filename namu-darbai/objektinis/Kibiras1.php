@@ -14,14 +14,12 @@ class Kibiras1
     {
         if (is_integer($kiekis) && $kiekis > 0) {
             $this->akmenuKiekis += $kiekis;
-            echo "Akmenys pridėti <br>";
-        } else {
-            echo 'Prašome įvesti skaičiaus tipo reikšmę, kuri yra didesnė už 0! <br>';
+            return;
         }
     }
 
     public function kiekPririnktaAkmenu()
     {
-        echo "Akmenų kiekis kibire: $this->akmenuKiekis <br>";
+        return "$this->akmenuKiekis";
     }
 }
