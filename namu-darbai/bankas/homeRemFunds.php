@@ -18,19 +18,23 @@ if (!isset($_SESSION['loggedIn'])) {
 
 <body>
     <?php include __DIR__ . '/menu.php' ?>
-    <h1>Nuskaičiuoti lėšas</h1>
-    <?php include __DIR__ . '/errorMsg.php' ?>
-    <ul>
-        <?php foreach ($accounts as $account) : ?>
-            <li>
-                <?= $account['name'] ?> <?= $account['surname'] ?> Sąskaitos likutis: <?= $account['amount'] ?>
-                <form action="?dir=remFunds&id=<?= $account['id'] ?>" method="post">
-                    <input type="text" name="remFunds" placeholder="Kiek nuskaičiuoti">
-                    <button type="submit">Nuskaičiuoti lėšas</button>
-                </form>
-            </li>
-        <?php endforeach ?>
-    </ul>
+    <div class="align">
+        <h1>Nuskaičiuoti lėšas</h1>
+        <?php include __DIR__ . '/errorMsg.php' ?>
+        <ul>
+            <?php foreach ($accounts as $account) : ?>
+                <li>
+                    <span class="list">Klientas:</span> <?= $account['name'] ?> <?= $account['surname'] ?>
+                    <br>
+                    <span class="list">Sąskaitos likutis:</span> <?= $account['amount'] ?>
+                    <form action="?dir=remFunds&id=<?= $account['id'] ?>" method="post">
+                        <input type="text" name="remFunds" placeholder="Kiek nuskaičiuoti">
+                        <button type="submit">Nuskaičiuoti lėšas</button>
+                    </form>
+                </li>
+            <?php endforeach ?>
+        </ul>
+    </div>
 </body>
 
 </html>

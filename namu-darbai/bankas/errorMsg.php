@@ -1,5 +1,5 @@
 <?php if ($msg = getMessage()) : ?>
-    <div style="<?= setStyle() ?>">
+    <span style="<?= setStyle() ?>">
         <?= $msg ?>
-    </div>
+    </span>
 <?php endif ?>

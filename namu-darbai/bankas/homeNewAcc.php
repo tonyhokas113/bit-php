@@ -18,22 +18,24 @@ if (!isset($_SESSION['loggedIn'])) {
 
 <body>
     <?php include __DIR__ . '/menu.php' ?>
-    <h1>Sukurti naują sąskaitą</h1>
-    <?php include __DIR__ . '/errorMsg.php' ?>
-    <br>
-    <span>Norint sukurti naują sąskaitą reikia užpildyti šią formą:</span>
-    <form action="?dir=addAcc" method="post">
-        <label for="name">Įveskite kliento vardą:</label>
-        <input id="name" type="text" placeholder="Vardas" name="vardas">
+    <div class="align">
+        <h1>Sukurti naują sąskaitą</h1>
+        <?php include __DIR__ . '/errorMsg.php' ?>
         <br>
-        <label for="surname">Įveskite kliento pavardę:</label>
-        <input id="surname" type="text" placeholder="Pavardė" name="pavarde">
-        <br>
-        <label for="id">Įveskite kliento asmens kodą:</label>
-        <input id="id" type="text" placeholder="Asmens kodas" name="ak">
-        <br>
-        <button type="submit">Sukurti sąskaitą</button>
-    </form>
+        <span>Norint sukurti naują sąskaitą reikia užpildyti šią formą:</span>
+        <form action="?dir=addAcc" method="post">
+            <label for="name">Įveskite kliento vardą:</label>
+            <input id="name" type="text" placeholder="Vardas" name="vardas">
+            <br>
+            <label for="surname">Įveskite kliento pavardę:</label>
+            <input id="surname" type="text" placeholder="Pavardė" name="pavarde">
+            <br>
+            <label for="id">Įveskite kliento asmens kodą:</label>
+            <input id="id" type="text" placeholder="Asmens kodas" name="ak">
+            <br>
+            <button type="submit">Sukurti sąskaitą</button>
+        </form>
+    </div>
 </body>
 
 </html>
