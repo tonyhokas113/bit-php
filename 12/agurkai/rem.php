@@ -11,7 +11,7 @@
     <?php $id = $_GET['id'] ?? 0 ?>
     <?php include __DIR__ . '/msg.php' ?>
     <form action="?action=rem&id=<?= $id ?>" method="post">
-        <input type="text" name="amount">
+        <input type="text" name="amount" value="<?= $mas[1]['amount'] ?? '' ?>">
         <button>Atimti Atimti agurkų</button>
     </form>
 </body>

@@ -5,6 +5,7 @@ foreach ($boxes as &$box) {
         // Validation
         if ($box['amount'] < (int) $_POST['amount']) {
             setMessage('Tiek agurkų nėra.');
+            setOld('amount', (int) $_POST['amount']);
             redirectToAction('rem', $id);
         }
         $box['amount']-= (int) $_POST['amount'];
