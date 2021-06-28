@@ -5,7 +5,7 @@ require __DIR__ . '/Pinigine.php';
 
 # 1
 
-$kibiras = new Kibiras1;
+// $kibiras = new Kibiras1;
 
 // $kibiras->prideti1Akmeni();
 // $kibiras->kiekPririnktaAkmenu();
@@ -25,8 +25,9 @@ $pinigine = new Pinigine;
 // $pinigine->ideti(1);
 // $pinigine->ideti(5);
 // $pinigine->skaiciuoti();
-$pinigine->ideti(1.39);
+// $pinigine->ideti(1.39);
 $pinigine->ideti(8);
-_d($pinigine->skaiciuoti());
+// _d($pinigine->skaiciuoti());
+$pinigine->skaiciuoti();
 
 # 3

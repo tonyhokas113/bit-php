@@ -21,6 +21,6 @@ class Pinigine
 
     public function skaiciuoti()
     {
-        return $this->popieriniaiPinigai + $this->metaliniaiPinigai;
+        echo 'Piniginėje yra: ' . $this->popieriniaiPinigai + $this->metaliniaiPinigai . ' eur.' . '<br>';
     }
 }
