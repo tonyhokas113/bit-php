@@ -11,11 +11,14 @@ class Kibiras3
 
     public function pridetiDaugAkmenu($kiekis)
     {
-        $this->akmenuKiekis += $kiekis;
+        if (is_integer($kiekis) && $kiekis > 0) {
+            $this->akmenuKiekis += $kiekis;
+        }
+        return;
     }
 
     public function kiekPririnktaAkmenu()
     {
-        echo $this->akmenuKiekis;
+        return "$this->akmenuKiekis";
     }
 }

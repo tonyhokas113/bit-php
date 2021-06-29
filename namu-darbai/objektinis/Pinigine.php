@@ -2,9 +2,7 @@
 
 class Pinigine
 {
-
-    private $popieriniaiPinigai = 0;
-    private $metaliniaiPinigai = 0;
+    private $popieriniaiPinigai, $metaliniaiPinigai = 0;
 
     public function ideti($kiekis)
     {

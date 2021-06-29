@@ -11,6 +11,6 @@ class Miskas
 
     protected function papasakok()
     {
-        echo "Aš gyvenu miške pavadintame $this->name, o kur tu?";
+        echo  " Aš gyvenu miške pavadintame $this->name, o kur tu?";
     }
 }

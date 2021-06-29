@@ -2,27 +2,23 @@
 
 class MarsoPalydovas
 {
-    private $name;
+    private $title;
+    private static $obj = [];
 
-    static private $palydovai = [];
-
-
-    public static function duotiPalydova()
+    public static function kontrole()
     {
-        if (count(self::$palydovai) === 0) {
-            return self::$palydovai[0] = new self('Deimas');
+        if (count(self::$obj) < 2) {
+            if (count(self::$obj) == 1) {
+                return self::$obj[] = new self('Fobas');
+            } else {
+                return self::$obj[] = new self('Deimas');
+            }
         }
-        if (count(self::$palydovai) === 1) {
-            return self::$palydovai[1] = new self('Fobas');
-        }
-        return self::$palydovai[rand(0, 1)];
+        return self::$obj[rand(0, count(self::$obj) - 1)];
     }
 
-
-
-
-    private function __construct($name)
+    private function __construct($title)
     {
-        $this->name = $name;
+        $this->title = $title;
     }
 }

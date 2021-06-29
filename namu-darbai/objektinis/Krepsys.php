@@ -1,44 +1,20 @@
 <?php
 
+const DYDIS = 500;
+
 class Krepsys
 {
-    public $talpa;
-    public $ideta = 0;
+    public $grybuKiekis, $krepsioSvoris = 0;
 
-    public function __construct($talpa)
-    {
-        $this->talpa = $talpa;
-    }
     public function eitiGrybauti()
     {
-        $i = 0;
-        do {
+        while ($this->grybuKiekis < DYDIS) {
+            $grybas = new Grybas();
 
-            $gryb = new Grybas();
-            print_r($gryb);
-            echo '<br>';
-            $i++;
-
-            if ($gryb->valgomas == true && $gryb->sukirmijes == false) {
-                $this->ideta += $gryb->svoris;
-                echo '<h2 style="color: green;">' . $this->ideta . '</h2>';
+            if ($grybas->valgomas == true && $grybas->sukirmijes == false) {
+                $this->grybuKiekis++;
+                $this->krepsioSvoris += $grybas->svoris;
             }
-        } while ($this->ideta <= $this->talpa);
+        };
     }
 }
-
-
-// class Krepsys
-// {
-//     private $kiekis = 0;
-
-
-//     public function detiGryba(Grybas $grybas, $reikia)
-//     {
-
-//         if ($grybas->valgomas && !$grybas->sukirmijes) {
-//             $this->kiekis += $grybas->svoris;
-//         }
-//         return $reikia > $this->kiekis;
-//     }
-// }

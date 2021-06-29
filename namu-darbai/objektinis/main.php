@@ -12,6 +12,7 @@ require __DIR__ . '/Grybas.php';
 require __DIR__ . '/Krepsys.php';
 require __DIR__ . '/Pinigine2.php';
 require __DIR__ . '/MarsoPalydovas.php';
+require __DIR__ . '/Tenisininkas2.php';
 
 # 1
 
@@ -47,83 +48,102 @@ require __DIR__ . '/MarsoPalydovas.php';
 // $kibiras3 = new Kibiras2;
 
 // $kibiras1->pridetiDaugAkmenu(10);
-// $kibiras2->pridetiDaugAkmenu(20);
-// $kibiras3->pridetiDaugAkmenu(30);
+// $kibiras2->pridetiDaugAkmenu(10);
+// $kibiras3->pridetiDaugAkmenu(10);
 
-// $kibiras1->kiekPririnktaAkmenu();
-// echo '<br>-------<br>';
-// $kibiras2->kiekPririnktaAkmenu();
-// echo '<br>-------<br>';
-// $kibiras3->kiekPririnktaAkmenu();
-// echo '<br>-------<br>';
-
-// echo $kibiras3->getAkmenuKiekisVisuoseKibiruose();
+// echo Kibiras2::getAkmenuKiekisVisuoseKibiruose();
 
 # 4
 
-// $kibirasNePo1 = new KibirasNePo1;
+// $stones = new KibirasNePo1;
 
-// $kibirasNePo1->pridetiDaugAkmenu(10);
-// $kibirasNePo1->kiekPririnktaAkmenu();
-// $kibirasNePo1->prideti1Akmeni();
-// echo '<br>-------<br>';
-// $kibirasNePo1->kiekPririnktaAkmenu();
+// $stones->pridetiDaugAkmenu(5);
+// $stones->prideti1Akmeni();
+
+// echo $stones->kiekPririnktaAkmenu();
 
 # 5
 
-// $zveris = new Zveris('Vilkas');
-// $zveris->papasakok();
+// $zveris = new Zveris('vilkas');
+
+// echo $zveris->paleisk();
 
 # 6
 
-// $Stikline1 = new Stikline(200);
-// $Stikline2 = new Stikline(150);
-// $Stikline3 = new Stikline(100);
+// $stikline1 = new Stikline(200);
+// $stikline2 = new Stikline(150);
+// $stikline3 = new Stikline(100);
 
-// $Stikline1->ipilti(300);
-// $Stikline2->ipilti($Stikline1->ispilti());
-// $Stikline3->ipilti($Stikline2->ispilti());
-// echo $Stikline3->getKiekis();
+
+// $stikline1->ipilti(300);
+// $stikline2->ipilti($stikline1->ispilti());
+// $stikline3->ipilti($stikline2->ispilti());
+
+// echo '<pre>';
+// var_dump($stikline1);
+// var_dump($stikline2);
+// var_dump($stikline3);
 
 # 7
 
-// $grybauti = new Krepsys(500);
-// $grybauti->eitiGrybauti();
-
-// $krepsys = new Krepsys();
-// while ($krepsys->detiGryba(new Grybas, 500)) {
-// };
-// var_dump($krepsys);
+// $grybai = new Krepsys;
+// $grybai->eitiGrybauti();
+// echo '<pre>';
+// var_dump($grybai);
 
 # 8
 
-// $kitaPinigine = new Pinigine2;
+// $pinigine2 = new Pinigine2;
 
+// $pinigine2->ideti(1);
+// $pinigine2->ideti(1.5);
+// $pinigine2->ideti(5);
+// $pinigine2->ideti(1.39);
+// $pinigine2->ideti(8);
+// $pinigine2->ideti(10);
+// $pinigine2->ideti(20);
+// $pinigine2->skaiciuoti();
 
-// $kitaPinigine->ideti(20);
-// $kitaPinigine->ideti(1);
-// $kitaPinigine->ideti(15);
-// $kitaPinigine->ideti(1);
-// $kitaPinigine->ideti(2);
-// print_r($kitaPinigine);
-
-// echo '<br>';
-// echo $kitaPinigine->monetos();
-// echo '<br>';
-// echo $kitaPinigine->banknotai();
+// echo $pinigine2->monetos();
+// echo $pinigine2->banknotai();
 
 # 9
 
-// $p1 = MarsoPalydovas::duotiPalydova();
-// $p2 = MarsoPalydovas::duotiPalydova();
-// $p3 = MarsoPalydovas::duotiPalydova();
-// $p4 = MarsoPalydovas::duotiPalydova();
-// $p5 = MarsoPalydovas::duotiPalydova();
-
+// $objektas1 = MarsoPalydovas::kontrole();
+// $objektas2 = MarsoPalydovas::kontrole();
+// $objektas3 = MarsoPalydovas::kontrole();
+// $objektas4 = MarsoPalydovas::kontrole();
 
 // echo '<pre>';
-// var_dump($p1);
-// var_dump($p2);
-// var_dump($p3);
-// var_dump($p4);
-// var_dump($p5);
+// var_dump($objektas1);
+// echo '<br>';
+// var_dump($objektas2);
+// echo '<br>';
+// var_dump($objektas3);
+
+# 10
+
+$tenisininkas1 = Tenisininkas2::zaidejai('Jonas');
+$tenisininkas2 = Tenisininkas2::zaidejai('Petras');
+$tenisininkas3 = Tenisininkas2::zaidejai('Juozas');
+
+Tenisininkas2::zaidimoPradzia();
+
+echo $tenisininkas1->arTuriKamuoliuka();
+echo $tenisininkas2->arTuriKamuoliuka();
+
+echo '<hr>';
+
+echo '<pre>';
+var_dump($tenisininkas1);
+echo '<br>';
+var_dump($tenisininkas2);
+echo '<br>';
+var_dump($tenisininkas3);
+
+$tenisininkas1->perduotiKamuoliuka();
+
+echo '<pre>';
+var_dump($tenisininkas1);
+echo '<br>';
+var_dump($tenisininkas2);

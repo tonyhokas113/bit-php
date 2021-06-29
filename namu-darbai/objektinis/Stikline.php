@@ -2,31 +2,29 @@
 
 class Stikline
 {
-    private $turis;
-    private $kiekis = 0;
-
+    private $turis, $kiekis = 0;
 
     public function __construct($turis)
     {
         $this->turis = $turis;
     }
 
-    public function getKiekis()
+    public function ipilti(int $kiekis)
     {
-        return $this->kiekis;
-    }
-
-    public function ipilti($kiekis)
-    {
-        if (($kiekis + $this->kiekis) > $this->turis) {
-            $this->kiekis = $this->turis;
-        } else {
-            $this->kiekis += $kiekis;
+        if ($kiekis > 0) {
+            if (($this->kiekis + $kiekis) > $this->turis) {
+                $this->kiekis = $this->turis;
+            } else {
+                $this->kiekis += $kiekis;
+            }
         }
+        return;
     }
 
     public function ispilti()
     {
-        return $this->kiekis;
+        $kiekis = $this->kiekis;
+        $this->kiekis = 0;
+        return $kiekis;
     }
 }

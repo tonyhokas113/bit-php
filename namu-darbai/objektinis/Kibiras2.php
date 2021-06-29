@@ -2,13 +2,8 @@
 
 class Kibiras2
 {
-    private static $akmenuKiekisVisuoseKibiruose;
     protected $akmenuKiekis = 0;
-
-    public function __construct()
-    {
-        self::$akmenuKiekisVisuoseKibiruose += $this->akmenuKiekis;
-    }
+    private static $akmenuKiekisVisuoseKibiruose = 0;
 
     public function prideti1Akmeni()
     {
@@ -18,17 +13,20 @@ class Kibiras2
 
     public function pridetiDaugAkmenu($kiekis)
     {
-        $this->akmenuKiekis += $kiekis;
-        self::$akmenuKiekisVisuoseKibiruose += $this->akmenuKiekis;
+        if (is_integer($kiekis) && $kiekis > 0) {
+            $this->akmenuKiekis += $kiekis;
+            self::$akmenuKiekisVisuoseKibiruose += $kiekis;
+            return;
+        }
     }
 
     public function kiekPririnktaAkmenu()
     {
-        echo $this->akmenuKiekis;
+        return "$this->akmenuKiekis";
     }
 
-    static function getAkmenuKiekisVisuoseKibiruose()
+    public static function getAkmenuKiekisVisuoseKibiruose()
     {
-        echo self::$akmenuKiekisVisuoseKibiruose;
+        return self::$akmenuKiekisVisuoseKibiruose;
     }
 }

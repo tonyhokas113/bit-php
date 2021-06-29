@@ -2,44 +2,35 @@
 
 class Pinigine2
 {
-    private $popieriniaiPinigai = [];
-    private $metaliniaiPinigai = [];
+    private $popieriniaiPinigai, $metaliniaiPinigai, $popieriniuKiekis, $metaliniuKiekis = 0;
 
     public function ideti($kiekis)
     {
-        if ($kiekis <= 2) {
-            array_push($this->metaliniaiPinigai, $kiekis);
-        } else if ($kiekis > 2) {
-            array_push($this->popieriniaiPinigai, $kiekis);
+        if (is_integer($kiekis) && $kiekis > 0 || is_float($kiekis) && $kiekis > 0) {
+            if ($kiekis <= 2) {
+                $this->metaliniaiPinigai += round($kiekis, 2);
+                $this->metaliniuKiekis++;
+                return $kiekis;
+            } else {
+                $this->popieriniaiPinigai += round($kiekis, 2);
+                $this->popieriniuKiekis++;
+                return $kiekis;
+            }
         }
     }
 
     public function skaiciuoti()
     {
-        $sumaPop = 0;
-        $sumaMet = 0;
-        foreach ($this->popieriniaiPinigai as $key => $value) {
-            $sumaPop += $value;
-        }
-        foreach ($this->metaliniaiPinigai as $key => $value) {
-            $sumaMet += $value;
-        }
-        echo "Popierinių pinigų suma: $sumaPop, o metalinių suma: $sumaMet";
+        echo 'Piniginėje yra: ' . $this->popieriniaiPinigai + $this->metaliniaiPinigai . ' eur.' . '<br>';
     }
+
     public function monetos()
     {
-        $kiekis = 0;
-        foreach ($this->metaliniaiPinigai as $value) {
-            $kiekis++;
-        }
-        return $kiekis . 'monetų.';
+        return "Monetos piniginėje: $this->metaliniuKiekis.<br>";
     }
+
     public function banknotai()
     {
-        $kiekis = 0;
-        foreach ($this->popieriniaiPinigai as $value) {
-            $kiekis++;
-        }
-        return $kiekis . ' banknotų.';
+        return "Banknotai piniginėje: $this->popieriniuKiekis.<br>";
     }
 }
