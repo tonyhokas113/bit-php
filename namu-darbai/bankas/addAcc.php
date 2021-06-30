@@ -50,7 +50,7 @@ if ($_GET['dir'] == 'addAcc') {
             die;
         }
     }
-    $account = ['name' => $_POST['vardas'], 'surname' => $_POST['pavarde'], 'userid' => $_POST['ak'], 'id' => generateIban(), 'amount' => 0];
+    $account = ['name' => $_POST['vardas'], 'surname' => $_POST['pavarde'], 'userid' => $_POST['ak'], 'id' => $_POST['iban'], 'amount' => 0];
     $accounts[] = $account;
     file_put_contents(__DIR__ . '/data.json', json_encode($accounts));
     setMessage('Sąskaita sukurta', 'color: green;');

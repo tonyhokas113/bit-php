@@ -123,27 +123,27 @@ require __DIR__ . '/Tenisininkas2.php';
 
 # 10
 
-$tenisininkas1 = Tenisininkas2::zaidejai('Jonas');
-$tenisininkas2 = Tenisininkas2::zaidejai('Petras');
-$tenisininkas3 = Tenisininkas2::zaidejai('Juozas');
+// $tenisininkas1 = Tenisininkas2::zaidejai('Jonas');
+// $tenisininkas2 = Tenisininkas2::zaidejai('Petras');
+// $tenisininkas3 = Tenisininkas2::zaidejai('Juozas');
 
-Tenisininkas2::zaidimoPradzia();
+// Tenisininkas2::zaidimoPradzia();
 
-echo $tenisininkas1->arTuriKamuoliuka();
-echo $tenisininkas2->arTuriKamuoliuka();
+// echo $tenisininkas1->arTuriKamuoliuka();
+// echo $tenisininkas2->arTuriKamuoliuka();
 
-echo '<hr>';
+// echo '<hr>';
 
-echo '<pre>';
-var_dump($tenisininkas1);
-echo '<br>';
-var_dump($tenisininkas2);
-echo '<br>';
-var_dump($tenisininkas3);
+// echo '<pre>';
+// var_dump($tenisininkas1);
+// echo '<br>';
+// var_dump($tenisininkas2);
+// echo '<br>';
+// var_dump($tenisininkas3);
 
-$tenisininkas1->perduotiKamuoliuka();
+// $tenisininkas1->perduotiKamuoliuka();
 
-echo '<pre>';
-var_dump($tenisininkas1);
-echo '<br>';
-var_dump($tenisininkas2);
+// echo '<pre>';
+// var_dump($tenisininkas1);
+// echo '<br>';
+// var_dump($tenisininkas2);

@@ -1,14 +1,14 @@
 <?php
 
-const DYDIS = 500;
 
 class Krepsys
 {
+    const DYDIS = 500;
     public $grybuKiekis, $krepsioSvoris = 0;
 
     public function eitiGrybauti()
     {
-        while ($this->grybuKiekis < DYDIS) {
+        while ($this->krepsioSvoris < Krepsys::DYDIS) {
             $grybas = new Grybas();
 
             if ($grybas->valgomas == true && $grybas->sukirmijes == false) {
