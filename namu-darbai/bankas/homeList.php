@@ -24,13 +24,14 @@ $i = 1;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sąskaitų sąrašas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./stilius.css">
 </head>
 
 <body>
     <div>
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="bg-light nav-link active" aria-current="page" href="?dir=homeList">Sąskaitų sąrašas</a>
+                <a class="nav-link active" aria-current="page" href="?dir=homeList">Sąskaitų sąrašas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="?dir=homeNewAcc">Sukurti naują sąskaitą</a>
@@ -45,7 +46,7 @@ $i = 1;
         <?php if (isset($_SESSION['loggedIn'])) : ?>
             <form action="http://127.0.0.1/bit-php/namu-darbai/bankas/login.php" method="post">
                 <input type="hidden" name="logout">
-                <button class="btn-sm btn btn-outline-dark" type="submit">Atsijungti</button>
+                <button class="btn-sm btn btn-outline-dark logout" type="submit">Atsijungti</button>
             </form>
         <?php endif ?>
     </div>
@@ -83,7 +84,7 @@ $i = 1;
                         <?= $account['amount'] ?>
                     </td>
                     <td>
-                        <form action="?dir=delete&id=<?= $account['id'] ?>" method="post">
+                        <form class="formbtn" action="?dir=delete&id=<?= $account['id'] ?>" method="post">
                             <button class="btn-sm btn btn-outline-danger" type="submit">Ištrinti sąskaitą</button>
                         </form>
                         <a class="btn-sm btn btn-outline-dark" href="http://127.0.0.1/bit-php/namu-darbai/bankas/?dir=homeAddFunds">Pridėti lėšas</a>

@@ -36,18 +36,22 @@ if (isset($_POST['user'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bankas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./login.css">
 </head>
 
 <body>
-    <h1>$--BANKAS--$</h1>
-    <?php include __DIR__ . '/errorMsg.php' ?>
-    <div>
-        <form action="" method="post">
-            <label for="user">Prisijungimo vardas</label>
+    <div class="logo">
+        <img src="./cover.png" alt="logo">
+    </div>
+    <div class="login">
+        <form class="box" action="" method="post">
+            <label class="firstlabel" for="user">Prisijungimo vardas</label>
             <input id="user" type="text" name="user">
             <label for="psw">Slaptažodis</label>
             <input id="psw" type="password" name="password">
-            <button type="submit">Prisijungti</button>
+            <button class="btn-sm btn btn-outline-dark" type="submit">Prisijungti</button>
+            <?php include __DIR__ . '/errorMsg.php' ?>
         </form>
     </div>
 </body>

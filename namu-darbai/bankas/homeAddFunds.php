@@ -15,6 +15,7 @@ if (!isset($_SESSION['loggedIn'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pridėti lėšas</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./stilius.css">
 </head>
 
 <body>
@@ -36,7 +37,7 @@ if (!isset($_SESSION['loggedIn'])) {
         <?php if (isset($_SESSION['loggedIn'])) : ?>
             <form action="http://127.0.0.1/bit-php/namu-darbai/bankas/login.php" method="post">
                 <input type="hidden" name="logout">
-                <button class="btn-sm btn btn-outline-dark" type="submit">Atsijungti</button>
+                <button class="btn-sm btn btn-outline-dark logout" type="submit">Atsijungti</button>
             </form>
         <?php endif ?>
     </div>
@@ -51,7 +52,7 @@ if (!isset($_SESSION['loggedIn'])) {
                     <span class="list">Sąskaitos likutis:</span> <?= $account['amount'] ?>
                     <form action="?dir=addFunds&id=<?= $account['id'] ?>" method="post">
                         <input type="text" name="addFunds" placeholder="Papildymo suma">
-                        <button type="submit">Papildyti sąskaitą</button>
+                        <button class="btn-sm btn btn-outline-dark" type="submit">Papildyti sąskaitą</button>
                     </form>
                 </li>
             <?php endforeach ?>
