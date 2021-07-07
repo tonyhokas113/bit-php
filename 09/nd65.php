@@ -1,6 +1,6 @@
 <?php
 
-function divisor(int $digit): int
+function divisor(int $digit) : int
 {
     if ($digit === 0 || $digit === 1) {
         return 1;
@@ -24,7 +24,7 @@ foreach (range(1, 100) as $_) {
     $mas100[] = rand(33, 77);
 }
 
-usort($mas100, function ($a, $b) {
+usort($mas100, function($a, $b) {
     static $cache = [];
 
     if (!isset($cache[$a])) {
@@ -37,3 +37,5 @@ usort($mas100, function ($a, $b) {
 });
 
 _d($mas100);
+
+

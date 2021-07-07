@@ -2,8 +2,12 @@
 
 <?php
 
-echo "Labas, ka tu ?";
+echo 'Labas, ką tu?';
 
-?>
 
-<h1>lol</h1>
+
+
+
+
+
+

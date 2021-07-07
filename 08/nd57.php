@@ -12,17 +12,17 @@ do {
         'user_id' => $uid,
         'place_in_row' => rand(0, 100)
     ];
-} while (count($masyvas) < 30);
+} while(count($masyvas) < 30);
 
 
 foreach ($masyvas as &$user) {
 
     $user['name'] = '';
     $user['surname'] = '';
-    foreach (range(1, rand(5, 15)) as $_) {
+    foreach(range(1, rand(5, 15)) as $_) {
         $user['name'] .= range('a', 'z')[rand(0, 25)];
     }
-    foreach (range(1, rand(5, 15)) as $_) {
+    foreach(range(1, rand(5, 15)) as $_) {
         $user['surname'] .= range('a', 'z')[rand(0, 25)];
     }
 }

@@ -1,4 +1,3 @@
-  
 <?php
 
 $masyvas = [];
@@ -15,7 +14,7 @@ do {
         'user_id' => $uid,
         'place_in_row' => rand(0, 100)
     ];
-} while (count($masyvas) < 30);
+} while(count($masyvas) < 30);
 
 _d($masyvas);
 _d($count);

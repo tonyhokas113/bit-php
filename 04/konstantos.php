@@ -1,13 +1,12 @@
-  
 <?php
 define('KONSTANTA', 'Kukutis');
 define('KONSTANTA', 'Bubu');
 
-define('lapas', 'Kitas kukutis'); // BLOGAI!!!!!!!!!!!
+define('lapas', 'Kitas kukutis');// BLOGAI!!!!!!!!!!!
 
-define('kitas_lapas', array('A', 'B')); // VISAI BLOGAI!!!!!!!!!!!
+define('kitas_lapas', array('A', 'B'));// VISAI BLOGAI!!!!!!!!!!!
 
-define('KITAS_LAPAS', ['A', 'B']); // GERAI
+define('KITAS_LAPAS', ['A', 'B']);// GERAI
 
 
 echo KONSTANTA;

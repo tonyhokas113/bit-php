@@ -1,94 +1,124 @@
 <?php
 
 $trecias = 5;
-$ketvirtas = $trecias + 5;
+$ketvirtas = $trecias % 3;
+
 
 echo $ketvirtas;
-echo "<br>";
+echo '<br>';
 
-// Jeigu pliusai priekyje tai pirma padidinam reiksme vienetu ir po to atspausdinam
-// Jeigu pliusai gale tai pirma atspausdinam reiksme o po to ja padidiname
-echo $trecias++; // ++$trecias; = 6;
-echo "<br>";
+echo ++$trecias;
+echo '<br>';
 echo $trecias;
-echo "<br>";
+echo '<br>';
 
 $sk = 1;
 
-$sk = 1;
 
 echo ++$sk * $sk++;
 // 2 * 2
 
+
 echo $sk++ * $sk++;
 // 1 * 2
+
 
 echo $sk++ * ++$sk;
 // 1 * 3
 
+
 echo ++$sk * ++$sk;
 // 2 * 3
 
-
-$ketvirtas = $ketvirtas + 5;
+// $ketvirtas = $ketvirtas + 5;
+// $ketvirtas += 5;
 $ketvirtas += 5;
 
-echo "<br>";
+echo '<br>';
 echo $ketvirtas;
-echo "<br>";
+echo '<br>';
+
 
 $pirmas = 'bla bla';
 $antras = 'ku kū';
-$trecias = $pirmas . $antras; // Stringu sudejime naudojame ne + o .
+$trecias = $pirmas .' '. $antras;
 
-echo "<br>";
+echo '<br>';
+
+
 echo $trecias;
 
-// Jei naudojame stringa be kintamuju reikia naudoti viengubas kabutes.
-// Jei naudojame stringa su kintamaisiais ar simboliais (\n) reikia dvigubu kabuciu.
-// \n kelia teksta i kita eilute, Narsykleje to nerodo.
-$pirmas = 'bla bla';
-$antras = "ku $pirmas kū";
 
-echo "<br>";
+$pirmas = 'bla bla';
+$antras = "ku kū \n\n\n\n\n\n\n\n\n\n";
+
+
+echo '<br>';
+echo $antras;
+echo $trecias;
+
 
 $pirmas = 'antras';
-$antras = 'bla bla';
-echo $$pirmas;
-
-echo "<br>";
-
-// print_r naudojamas atspausdinti masyvus, objektus.
-// var_dump atspausdina kintamojo duomenis.
-
-var_dump('ku ku');
-
-// string(5) "ku ku" atspausdina tipa, stringo ilgi (baitais) ir reiksme.
-
-echo "<br>";
-echo '<hr>';
-
-echo var_dump(0 == 0);
-
-echo "<br>";
+$antras = 'bla_bla';
 
 
-// Palyginimo operatorius <=> (spaceship) naudojamas sortinti 
-echo 1 <=> 1; // 0
+$bla_bla = 'Valio!';
 
-echo "<br>";
+echo '<br>';echo '<br><hr>';echo '<br><pre>';
 
-var_dump('1' == '01'); // 1 == 1 -> true
+echo $$$pirmas;
+echo '<br>';
 
-echo "<br>";
+var_dump('裡');
+var_dump(0 <=> 8);
 
-$drambliai = 2;
+
+var_dump(22 == '22'); // 1 == 1 -> true
+
+echo '<br>';
+
+$drambliai = 0;
 if ($drambliai) {
     echo 'Yra dramblių';
 }
+echo 'Yra dramblių';
 
-echo "<br>";
 
-echo $rezultatas = (4 > 1) ? 'Yes' : 'No';
+echo '<br>';
 
-//match
+$rezultatas = (false) ? 'A' : ( (true) ? 'B' : 'C' ); // $rezultatas  yra 
+
+
+echo $rezultatas;
+
+echo '<br>';
+
+unset($rezultatas);
+
+// $rezultatas = null;
+
+var_dump(isset($rezultatas));
+
+// echo $rezultatas;
+echo '<br>';
+
+$paukstis = 'Varna';
+
+
+echo $paukstis ?? 'Zyle';
+
+$c = null;
+$d = null;
+
+echo '<br>';
+
+echo ($c ?? 5) * ($d ?? 5);
+
+
+
+
+
+
+
+
+

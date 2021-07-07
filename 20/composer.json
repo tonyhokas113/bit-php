@@ -1,0 +1,18 @@
+{
+    "name": "arvyd/20",
+    "description": "bla bla",
+    "authors": [{
+        "name": "A-Kija",
+        "email": "arvydas.kijakauskas@gmail.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "Zoo\\": "",
+            "Australia\\": "australai",
+            "Belgium\\": "belgai"
+        }
+    },
+    "require": {
+        "ramsey/uuid": "^4.1"
+    }
+}

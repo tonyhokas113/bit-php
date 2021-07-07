@@ -8,7 +8,8 @@ foreach (range(1, 5) as $keyBig => $_) {
         foreach (range(1, 5) as $keySmall => $_) {
             $masyvas[$keyBig][$keySmall] = rand(5, 25);
         }
-    } else {
+    }
+    else {
         $masyvas[$keyBig] = rand(5, 25);
     }
 }
@@ -21,7 +22,8 @@ foreach ($masyvas as $val) {
         foreach ($val as $val2) {
             _d($val2);
         }
-    } else {
+    }
+    else {
         _d($val, 'skaicius');
     }
 }

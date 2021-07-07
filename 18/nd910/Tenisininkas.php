@@ -1,7 +1,6 @@
 <?php
 
-class Tenisininkas
-{
+class Tenisininkas {
 
     private $vardas;
     private $kamuoliukas = false;
@@ -30,13 +29,13 @@ class Tenisininkas
             echo '<h3>Negali pats su savimi žaisti</h3>';
             die;
         }
-        rand(0, 1) ?
-            self::$zaidejas1->perduotiKamuoliuka() :
-            self::$zaidejas2->perduotiKamuoliuka();
+        rand(0, 1) ? 
+        self::$zaidejas1->perduotiKamuoliuka() : 
+        self::$zaidejas2->perduotiKamuoliuka();
         self::$start = true;
     }
-
-
+    
+    
     public function arTuriKamuoliuka()
     {
         return $this->kamuoliukas;
@@ -59,7 +58,7 @@ class Tenisininkas
 
     public function perduotiKamuoliuka()
     {
-
+        
         if (self::$zaidejas1 === null || self::$zaidejas2 === null) {
             echo '<h3>Negali pats su savimi žaisti</h3>';
             die;
@@ -75,8 +74,10 @@ class Tenisininkas
             self::$zaidejas2->kamuoliukas = true;
         }
         // this is 2
-        if ($this->vardas == self::$zaidejas2->vardas) {
+        elseif ($this->vardas == self::$zaidejas2->vardas) {
             self::$zaidejas1->kamuoliukas = true;
         }
+
     }
+
 }

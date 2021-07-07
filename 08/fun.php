@@ -1,10 +1,9 @@
 <?php
 
 
-function recursive($num)
-{
+function recursive($num) {
     echo $num, '<br>';
-    if ($num < 5) {
+    if ($num < 5){
         //Kviečiame save. Padidiname numerį vienetu.
         recursive($num + 1);
     }
@@ -18,28 +17,27 @@ recursive($startNum);
 
 
 $masyvas = [
-    ['a', 'd'],
-    ['v', 'e'],
-    ['a', 'c'],
-    ['s', 'r'],
+    ['a','d'],
+    ['v','e'],
+    ['a','c'],
+    ['s','r'],
 ];
 
-function doSort($a, $b)
-{
+function doSort($a, $b) {
     return $a[0] <=> $b[0];
 }
 
-$doS = function ($a, $b) {
+$doS = function($a, $b) {
     return $a[0] <=> $b[0];
 };
 
 
-usort($masyvas, function ($a, $b) {
+usort($masyvas, function($a, $b) {
     return $a[0] <=> $b[0];
 });
 
-usort($masyvas, fn ($a, $b) => $a[0] <=> $b[0]);
-
+usort($masyvas, fn($a, $b) => $a[0] <=> $b[0]);
+    
 
 // _d($masyvas);
 
@@ -53,15 +51,15 @@ $labas = 'labas';
 $viso = 'viso';
 
 
-$a1 = function () {
+$a1 = function() {
     var_dump($labas);
 };
 
-$a2 = fn () => var_dump($labas);
+$a2 = fn() => var_dump($labas);
 
 
 
-$a3 = function () use (&$labas, $viso) {
+$a3 = function() use(&$labas, $viso) {
     var_dump($labas);
     var_dump($viso);
 };
@@ -74,17 +72,18 @@ $labas = 'Viso gero';
 $a3();
 
 
-$func = function () use (&$func) {
-    static $current = 10;
+$func = function() use (&$func) { 
+    static $current = 10; 
     // tikrinam eigą
-    if ($current <= 0) {
+    if ($current <= 0) { 
         //išeinam 
         return FALSE;
-    }
+    } 
     // spausdinam reikšmę.
-    echo "$current<br>";
-    $current--;
-    $func();
-};
-//  Kviečiam funkciją
-$func();
+    echo "$current<br>"; 
+    $current--; 
+    $func(); 
+ }; 
+  //  Kviečiam funkciją
+ $func();
+ 

@@ -10,6 +10,7 @@ function vardas($par1 = 10, $par2 = 10)
     $viso = 'Viso gero';
     $sumav = $par1 + $par2;
     return $sumav;
+
 }
 
 
@@ -31,7 +32,8 @@ function calc($action, ...$arg)
     foreach ($arg as $val) {
         if ($action == 'plus') {
             $answ += $val;
-        } elseif ($action == 'minus') {
+        }
+        elseif ($action == 'minus') {
             $answ -= $val;
         }
     }
@@ -41,26 +43,26 @@ function calc($action, ...$arg)
     return $answ;
 }
 
-_d(
+_d( 
     calc('minus', 1, 5, 8),
 );
 
-_d(
+_d( 
     calc('petras')
 );
 
 // echo $viso;
 
 
-function stepper()
+function stepper() 
 {
     static $x = 0;
-    _d(__FUNCTION__);
+    _d( __FUNCTION__ );
     return ++$x;
 }
 
 
-_d(stepper());
-_d(stepper());
-_d(stepper());
-_d(stepper());
+_d( stepper() );
+_d( stepper() );
+_d( stepper() );
+_d( stepper() );
