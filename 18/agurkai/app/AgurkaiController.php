@@ -3,6 +3,19 @@ namespace Bank;
 
 class AgurkaiController {
 
+    // private static $dbType = 'json';
+    private static $dbType = 'maria';
+    
+    public static function getData()
+    {
+        if (self::$dbType == 'json') {
+            return Json::getJson();
+        }
+        if (self::$dbType == 'maria') {
+            return Maria::getMaria();
+        }
+    }
+
 
     public function agurkuTest($wahatToSay)
     {
@@ -12,7 +25,7 @@ class AgurkaiController {
 
     public function index()
     {
-        return App::view('index', ['boxes' => Json::getJson()->showAll()]);
+        return App::view('index', ['boxes' => self::getData()->showAll()]);
     }
 
     public function add($id)
@@ -23,9 +36,9 @@ class AgurkaiController {
     public function doAdd($id)
     {
         $id = (int) $id;
-        $box = Json::getJson()->show($id);
+        $box = self::getData()->show($id);
         $box['amount'] += (int) $_POST['amount'];
-        Json::getJson()->update($id, $box);
+        self::getData()->update($id, $box);
         App::redirect();
     }
 
@@ -37,15 +50,15 @@ class AgurkaiController {
     public function doRemove($id)
     {
         $id = (int) $id;
-        $box = Json::getJson()->show($id);
+        $box = self::getData()->show($id);
         $box['amount'] -= (int) $_POST['amount'];
-        Json::getJson()->update($id, $box);
+        self::getData()->update($id, $box);
         App::redirect();
     }
 
     public function delete($id)
     {
-        Json::getJson()->delete($id);
+        self::getData()->delete($id);
         App::redirect();
     }
 
@@ -58,7 +71,7 @@ class AgurkaiController {
     public function save()
     {
         $box = ['id' => rand(10000000, 99999999), 'amount' => 0]; // be garantiju unikalumui
-        Json::getJson()->create($box);
+        self::getData()->create($box);
         App::redirect();
     }
 

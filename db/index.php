@@ -14,6 +14,28 @@ $options = [
 ];
 $pdo = new PDO($dsn, $user, $pass, $options);
 
+//Trynimas
+// DELETE FROM table_name
+// WHERE some_column = some_value
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    $sql = "DELETE FROM trees
+    WHERE id = :aidys";
+
+    //WHERE id = 888 OR 1
+
+    $stmt = $pdo->prepare($sql); // Paruosimas
+    $stmt->execute([ 'aidys' => $_POST['id']  ]);
+    
+    //$pdo->query($sql);
+
+
+
+    header('Location: http://localhost/barsukas/db/');
+    die;
+
+}
+
 // Seeder
 $trees = [
     ['Beržas', rand(0, 1500) / 100, 1],
@@ -35,9 +57,16 @@ $n = rand(0, count($trees) -1 );
 // ";
 
 $sql = "INSERT INTO trees (`name`, height, `type`)
-VALUES ('".$trees[$n][0]."', ".$trees[$n][1].", ".$trees[$n][2].")
+VALUES (?, ?, ?)
 ";
-$pdo->query($sql);
+// VALUES ('".$trees[$n][0]."', ".$trees[$n][1].", ".$trees[$n][2].")
+
+
+$stmt = $pdo->prepare($sql); // Paruosimas
+$stmt->execute([ $trees[$n][0], $trees[$n][1],  $trees[$n][2]]);
+// $pdo->query($sql);
+
+
 
 
 //Skaitymas
@@ -66,14 +95,14 @@ WHERE `name` = 'Beržas'
 $pdo->query($sql);
 
 
-//Trynimas
-// DELETE FROM table_name
-// WHERE some_column = some_value
-$sql = "DELETE FROM trees
-WHERE id = 29 OR 1
-";
 
-// $pdo->query($sql);
+
+?>
+
+<form action="" method="post">
+<input type="text" name="id">
+<button type="submit">DELETE</button>
+</form>
 
 
 

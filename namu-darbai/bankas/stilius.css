@@ -46,3 +46,51 @@ body {
   width: 90vw;
   border: 1px solid black;
 }
+
+h1 {
+  text-align: center;
+  margin: 50px 0 30px 0px;
+}
+
+/* Create account */
+
+.formDiv {
+}
+
+.newAccForm {
+  padding: 30px 0px;
+  width: 40%;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0 30%;
+  min-width: 350px;
+}
+
+/* .newAccSpan {
+  margin-left: 30%;
+  font-size: 15px;
+  font-style: oblique;
+  font-weight: lighter;
+} */
+
+label {
+  display: block;
+  margin: 15px 0 5px 15%;
+}
+
+.createAccBtn {
+  display: block;
+  width: 130px;
+  margin: 20px 0 0 calc((100% - 130px) / 2);
+}
+
+.form-control {
+  margin: 0 15% 0 15%;
+  width: 70%;
+}
+
+#iban {
+  text-align: center;
+  word-spacing: 3px;
+  letter-spacing: 0.5px;
+}

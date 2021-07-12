@@ -41,25 +41,20 @@ if (!isset($_SESSION['loggedIn'])) {
             </form>
         <?php endif ?>
     </div>
-    <div>
-        <h1>Sukurti naują sąskaitą</h1>
+    <div class="formDiv">
         <?php include __DIR__ . '/errorMsg.php' ?>
-        <br>
-        <span>Norint sukurti naują sąskaitą reikia užpildyti šią formą:</span>
-        <form action="?dir=addAcc" method="post">
+        <h1>Sukurti naują sąskaitą</h1>
+        <form class="newAccForm" action="?dir=addAcc" method="post">
+            <!-- <span class="newAccSpan">Norint sukurti naują sąskaitą reikia užpildyti šią formą:</span> -->
             <label for="name">Įveskite kliento vardą:</label>
-            <input id="name" type="text" placeholder="Vardas" name="vardas">
-            <br>
+            <input class="form-control" id="name" type="text" placeholder="Vardas" name="vardas">
             <label for="surname">Įveskite kliento pavardę:</label>
-            <input id="surname" type="text" placeholder="Pavardė" name="pavarde">
-            <br>
+            <input class="form-control" id="surname" type="text" placeholder="Pavardė" name="pavarde">
             <label for="id">Įveskite kliento asmens kodą:</label>
-            <input id="id" type="text" placeholder="Asmens kodas" name="ak">
-            <br>
+            <input class="form-control" id="id" type="text" placeholder="Asmens kodas" name="ak">
             <label for="iban">Kliento būsimas saskaitos numeris:</label>
-            <input id="iban" type="text" name="iban" value="<?= generateIban() ?>" readonly>
-            <br>
-            <button class="btn-sm btn btn-outline-dark" type="submit">Sukurti sąskaitą</button>
+            <input class="form-control" id="iban" type="text" name="iban" value="<?= generateIban() ?>" readonly>
+            <button class="createAccBtn btn-sm btn btn-outline-dark" type="submit">Sukurti sąskaitą</button>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
