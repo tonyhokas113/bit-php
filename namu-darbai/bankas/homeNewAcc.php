@@ -21,7 +21,10 @@ if (!isset($_SESSION['loggedIn'])) {
 </head>
 
 <body>
-    <div>
+    <div class="fillBg">
+        <img class="logo" src="./img/cover.png" alt="logo">
+    </div>
+    <div class="navDivSize">
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link" href="?dir=homeList">Sąskaitų sąrašas</a>
@@ -51,9 +54,8 @@ if (!isset($_SESSION['loggedIn'])) {
     </div>
 
     <div class="formDiv">
-        <h1>Sukurti naują sąskaitą</h1>
+        <?php include __DIR__ . '/errorMsg.php' ?>
         <form class="newAccForm" action="?dir=addAcc" method="post">
-            <?php include __DIR__ . '/errorMsg.php' ?>
             <!-- <span class="newAccSpan">Norint sukurti naują sąskaitą reikia užpildyti šią formą:</span> -->
             <label for="name">Įveskite kliento vardą:</label>
             <input class="form-control" id="name" type="text" placeholder="Vardas" name="vardas">

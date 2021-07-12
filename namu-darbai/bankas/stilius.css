@@ -44,14 +44,10 @@ body {
 
 .table {
   text-align: center;
-  margin: 0 5vw 0 5vw;
+  margin: 5vh 5vw 0 5vw;
   width: 90vw;
   border: 1px solid black;
-}
-
-h1 {
-  text-align: center;
-  margin: 50px 0 30px 0px;
+  min-width: 900px;
 }
 
 .userImg {
@@ -72,6 +68,24 @@ h1 {
   line-height: 26px;
 }
 
+.errAlign {
+  text-align: center;
+}
+
+.logo {
+  margin-left: 20vw;
+  width: 60vw;
+  height: 21vh;
+}
+
+.fillBg {
+  background-color: #f3e9f1;
+}
+
+.navDivSize {
+  height: 45px;
+}
+
 /* Create account */
 
 .newAccForm {
@@ -79,7 +93,7 @@ h1 {
   width: 40%;
   border: 1px solid black;
   border-radius: 5px;
-  margin: 0 30%;
+  margin: 5vh 30% 0 30%;
   min-width: 350px;
 }
 

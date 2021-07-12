@@ -30,8 +30,10 @@ $i = 1;
 </head>
 
 <body>
-
-    <div>
+    <div class="fillBg">
+        <img class="logo" src="./img/cover.png" alt="logo">
+    </div>
+    <div class="navDivSize">
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="?dir=homeList">Sąskaitų sąrašas</a>
@@ -61,7 +63,6 @@ $i = 1;
     </div>
 
     <div>
-        <h1>Sąskaitų sąrašas</h1>
         <?php include __DIR__ . '/errorMsg.php' ?>
         <table class="table table-striped table-bordered align-middle table-sm table-hover">
             <tr class="table-dark">

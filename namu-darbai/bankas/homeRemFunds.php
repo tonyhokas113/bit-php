@@ -21,7 +21,10 @@ if (!isset($_SESSION['loggedIn'])) {
 </head>
 
 <body>
-    <div>
+    <div class="fillBg">
+        <img class="logo" src="./img/cover.png" alt="logo">
+    </div>
+    <div class="navDivSize">
         <ul class="nav nav-tabs">
             <li class="nav-item">
                 <a class="nav-link" href="?dir=homeList">Sąskaitų sąrašas</a>
@@ -51,7 +54,6 @@ if (!isset($_SESSION['loggedIn'])) {
     </div>
 
     <div>
-        <h1>Nuskaičiuoti lėšas</h1>
         <?php include __DIR__ . '/errorMsg.php' ?>
         <ul>
             <?php foreach ($accounts as $account) : ?>
