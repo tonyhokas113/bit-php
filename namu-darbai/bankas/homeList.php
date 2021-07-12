@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/functions.php';
+require __DIR__ . '/svg.php';
 
 if (!isset($_SESSION['loggedIn'])) {
     header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/login.php');
@@ -29,7 +30,6 @@ $i = 1;
 </head>
 
 <body>
-    <!-- NAV -->
 
     <div>
         <ul class="nav nav-tabs">
@@ -52,9 +52,13 @@ $i = 1;
                 <button class="btn-sm btn btn-outline-dark logout" type="submit">Atsijungti</button>
             </form>
         <?php endif ?>
+        <?php if (isset($_SESSION['user'])) : ?>
+            <div class="loggedInArea">
+                <img class="userImg" src="./img/user.png" alt="user">
+                <span class="loggedInAs"><?= $_SESSION['user'] ?></span>
+            </div>
+        <?php endif ?>
     </div>
-
-    <!-- MAIN -->
 
     <div>
         <h1>Sąskaitų sąrašas</h1>
@@ -90,7 +94,7 @@ $i = 1;
                         <?= $account['amount'] ?>
                     </td>
                     <td>
-                        <form class="formbtn" action="?dir=delete&id=<?= $account['id'] ?>" method="post">
+                        <form class="formBtnDel" action="?dir=delete&id=<?= $account['id'] ?>" method="post">
                             <button class="btn-sm btn btn-outline-danger" type="submit">Ištrinti sąskaitą</button>
                         </form>
                         <a class="btn-sm btn btn-outline-dark" href="http://127.0.0.1/bit-php/namu-darbai/bankas/?dir=homeAddFunds">Pridėti lėšas</a>

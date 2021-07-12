@@ -36,9 +36,6 @@ function setSvg()
         unset($_SESSION['svg']);
         return '<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>';
     }
-    // $svg = $_SESSION['svg'];
-    // unset($_SESSION['svg']);
-    // return $svg;
 }
 
 function setMessage(string $msg, $class, $svg)

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require __DIR__ . '/functions.php';
+require __DIR__ . '/svg.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['logout'])) {
     unset($_SESSION['loggedIn'], $_SESSION['username']);
@@ -19,12 +20,11 @@ if (isset($_POST['user'])) {
                 header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/index.php');
                 die;
             }
+        } else {
+            setMessage('Vartotojas' . $user['name'] . 'nerastas', 'color: red;');
+            header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/index.php');
+            die;
         }
-        // else {
-        //     setMessage('Vartotojas' . $user['name'] . 'nerastas', 'color: red;');
-        //     header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/index.php');
-        //     die;
-        // }
     }
 }
 ?>
@@ -42,17 +42,18 @@ if (isset($_POST['user'])) {
 </head>
 
 <body>
-    <div class="logo">
-        <img src="./cover.png" alt="logo">
+    <div class="logoDiv">
+        <img src="./img/Bit-bankas.jpg" alt="banner">
     </div>
+    <div class="background"></div>
     <div class="login">
+        <?php include __DIR__ . '/errorMsg.php' ?>
         <form class="box" action="" method="post">
             <label class="firstlabel" for="user">Prisijungimo vardas</label>
             <input id="user" type="text" name="user">
             <label for="psw">Slaptažodis</label>
             <input id="psw" type="password" name="password">
             <button class="btn-sm btn btn-outline-dark" type="submit">Prisijungti</button>
-            <?php include __DIR__ . '/errorMsg.php' ?>
         </form>
     </div>
 </body>

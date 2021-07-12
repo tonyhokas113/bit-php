@@ -10,6 +10,8 @@ body {
   background: linear-gradient(to right, #ffffff, #fffae6);
 }
 
+/* MAIN */
+
 .logout {
   float: right;
   margin-right: 5px;
@@ -18,13 +20,8 @@ body {
   padding: 2px 5px 2px 5px;
 }
 
-.formbtn {
+.formBtnDel {
   display: inline;
-}
-
-.form-control {
-  margin: 0 30vw 0 30vw;
-  width: 40vw;
 }
 
 .nav {
@@ -37,7 +34,12 @@ body {
 }
 
 .active {
-  background-color: aquamarine;
+  background-color: #fffdf4 !important;
+  color: #0d6efd !important;
+}
+
+.nav-link {
+  color: black;
 }
 
 .table {
@@ -50,6 +52,24 @@ body {
 h1 {
   text-align: center;
   margin: 50px 0 30px 0px;
+}
+
+.userImg {
+  height: 26px;
+  width: 26px;
+  margin-right: 2px;
+}
+
+.loggedInArea {
+  display: inline-block;
+  position: relative;
+  top: -51px;
+  left: 80%;
+  width: 100px;
+}
+
+.loggedInAs {
+  line-height: 26px;
 }
 
 /* Create account */

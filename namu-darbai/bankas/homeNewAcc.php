@@ -42,7 +42,14 @@ if (!isset($_SESSION['loggedIn'])) {
                 <button class="btn-sm btn btn-outline-dark logout" type="submit">Atsijungti</button>
             </form>
         <?php endif ?>
+        <?php if (isset($_SESSION['user'])) : ?>
+            <div class="loggedInArea">
+                <img class="userImg" src="./img/user.png" alt="user">
+                <span class="loggedInAs"><?= $_SESSION['user'] ?></span>
+            </div>
+        <?php endif ?>
     </div>
+
     <div class="formDiv">
         <h1>Sukurti naują sąskaitą</h1>
         <form class="newAccForm" action="?dir=addAcc" method="post">

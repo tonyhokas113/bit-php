@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/functions.php';
+require __DIR__ . '/svg.php';
 
 if (!isset($_SESSION['loggedIn'])) {
     header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/login.php');
@@ -41,7 +42,14 @@ if (!isset($_SESSION['loggedIn'])) {
                 <button class="btn-sm btn btn-outline-dark logout" type="submit">Atsijungti</button>
             </form>
         <?php endif ?>
+        <?php if (isset($_SESSION['user'])) : ?>
+            <div class="loggedInArea">
+                <img class="userImg" src="./img/user.png" alt="user">
+                <span class="loggedInAs"><?= $_SESSION['user'] ?></span>
+            </div>
+        <?php endif ?>
     </div>
+
     <div>
         <h1>Pridėti lėšas</h1>
         <?php include __DIR__ . '/errorMsg.php' ?>
