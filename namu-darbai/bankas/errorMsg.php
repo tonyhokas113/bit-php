@@ -1,5 +1,6 @@
 <?php if ($msg = getMessage()) : ?>
-    <div style="<?= setStyle() ?>">
+    <div class="<?= setClass() ?>">
+        <?= setSvg() ?>
         <?= $msg ?>
     </div>
 <?php endif ?>

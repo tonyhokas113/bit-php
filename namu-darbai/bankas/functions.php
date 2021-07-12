@@ -9,20 +9,43 @@ function getMessage()
     return $msg;
 }
 
-function setStyle()
+function setClass()
 {
-    if (!isset($_SESSION['style'])) {
+    if (!isset($_SESSION['class'])) {
         return null;
     }
-    $style = $_SESSION['style'];
-    unset($_SESSION['style']);
-    return $style;
+    $class = $_SESSION['class'];
+    unset($_SESSION['class']);
+    return $class;
 }
 
-function setMessage(string $msg, $style)
+function setSvg()
+{
+    if (!isset($_SESSION['svg'])) {
+        return null;
+    }
+    if ($_SESSION['svg'] == 'V') {
+        unset($_SESSION['svg']);
+        return '<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>';
+    }
+    if ($_SESSION['svg'] == 'I') {
+        unset($_SESSION['svg']);
+        return '<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>';
+    }
+    if ($_SESSION['svg'] == '!') {
+        unset($_SESSION['svg']);
+        return '<svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>';
+    }
+    // $svg = $_SESSION['svg'];
+    // unset($_SESSION['svg']);
+    // return $svg;
+}
+
+function setMessage(string $msg, $class, $svg)
 {
     $_SESSION['msg'] = $msg;
-    $_SESSION['style'] = $style;
+    $_SESSION['class'] = $class;
+    $_SESSION['svg'] = $svg;
 }
 
 function generateIban()

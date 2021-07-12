@@ -1,5 +1,7 @@
 <?php
 require __DIR__ . '/functions.php';
+require __DIR__ . '/svg.php';
+
 if (!isset($_SESSION['loggedIn'])) {
     header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/login.php');
     die;
@@ -42,9 +44,9 @@ if (!isset($_SESSION['loggedIn'])) {
         <?php endif ?>
     </div>
     <div class="formDiv">
-        <?php include __DIR__ . '/errorMsg.php' ?>
         <h1>Sukurti naują sąskaitą</h1>
         <form class="newAccForm" action="?dir=addAcc" method="post">
+            <?php include __DIR__ . '/errorMsg.php' ?>
             <!-- <span class="newAccSpan">Norint sukurti naują sąskaitą reikia užpildyti šią formą:</span> -->
             <label for="name">Įveskite kliento vardą:</label>
             <input class="form-control" id="name" type="text" placeholder="Vardas" name="vardas">

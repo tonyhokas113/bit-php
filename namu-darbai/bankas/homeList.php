@@ -1,5 +1,6 @@
 <?php
 require __DIR__ . '/functions.php';
+
 if (!isset($_SESSION['loggedIn'])) {
     header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/login.php');
     die;
@@ -28,6 +29,8 @@ $i = 1;
 </head>
 
 <body>
+    <!-- NAV -->
+
     <div>
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -50,6 +53,9 @@ $i = 1;
             </form>
         <?php endif ?>
     </div>
+
+    <!-- MAIN -->
+
     <div>
         <h1>Sąskaitų sąrašas</h1>
         <?php include __DIR__ . '/errorMsg.php' ?>

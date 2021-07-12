@@ -1,9 +1,10 @@
 <?php
 session_start();
 require __DIR__ . '/functions.php';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['logout'])) {
     unset($_SESSION['loggedIn'], $_SESSION['username']);
-    setMessage('Atsijungta sėkmingai', 'color: green;');
+    setMessage('Atsijungta sėkmingai', 'alert alert-success d-flex align-items-center', 'V');
     header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/login.php');
     die;
 }
@@ -14,7 +15,7 @@ if (isset($_POST['user'])) {
             if ($user['pass'] == md5($_POST['password'])) {
                 $_SESSION['loggedIn'] = 1;
                 $_SESSION['user'] = $user['name'];
-                setMessage('Labas, ' . $user['name'], 'color: green;');
+                setMessage('Labas, ' . $user['name'], 'alert alert-success d-flex align-items-center', 'V');
                 header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/index.php');
                 die;
             }
