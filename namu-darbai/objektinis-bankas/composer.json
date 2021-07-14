@@ -1,0 +1,17 @@
+{
+    "name": "vaigaudas/objektinis-bankas",
+    "description": "objektinis-bankas",
+    "authors": [
+        {
+            "name": "Vaigaudas",
+            "email": "79445277+tonyhokas113@users.noreply.github.com"
+        }
+    ],
+    "psr-4": {
+        "psr-4": {
+            "Bank\\": "app",
+            "App\\DB\\": "app"
+        }
+    },
+    "require": {}
+}
