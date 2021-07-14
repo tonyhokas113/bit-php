@@ -1,7 +1,10 @@
 <?php
 session_start();
+define('ENTER', true);
+require __DIR__ . '/main.php';
+
 if (!isset($_SESSION['loggedIn'])) {
-    header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/login.php');
+    header('Location: http://127.0.0.1/bit-php/namu-darbai/objektinis-bankas/login.php');
     die;
 }
 
