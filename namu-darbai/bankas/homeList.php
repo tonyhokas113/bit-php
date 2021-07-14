@@ -41,12 +41,6 @@ $i = 1;
             <li class="nav-item">
                 <a class="nav-link" href="?dir=homeNewAcc">Sukurti naują sąskaitą</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="?dir=homeAddFunds">Pridėti lėšas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="?dir=homeRemFunds">Nuskaičiuoti lėšas</a>
-            </li>
         </ul>
         <?php if (isset($_SESSION['loggedIn'])) : ?>
             <form action="http://127.0.0.1/bit-php/namu-darbai/bankas/login.php" method="post">
@@ -98,8 +92,12 @@ $i = 1;
                         <form class="formBtnDel" action="?dir=delete&id=<?= $account['id'] ?>" method="post">
                             <button class="btn-sm btn btn-outline-danger" type="submit">Ištrinti sąskaitą</button>
                         </form>
-                        <a class="btn-sm btn btn-outline-dark" href="http://127.0.0.1/bit-php/namu-darbai/bankas/?dir=homeAddFunds">Pridėti lėšas</a>
-                        <a class="btn-sm btn btn-outline-dark" href="http://127.0.0.1/bit-php/namu-darbai/bankas/?dir=homeRemFunds">Nuskaičiuoti lėšas</a>
+                        <form class="formBtnDel" action="?dir=homeAddFunds&id=<?= $account['id'] ?>" method="post">
+                            <button type="submit" class="btn-sm btn btn-outline-dark">Pridėti lėšas</button>
+                        </form>
+                        <form class="formBtnDel" action="?dir=homeRemFunds&id=<?= $account['id'] ?>" method="post">
+                            <button type="submit" class="btn-sm btn btn-outline-dark">Nuskaičiuoti lėšas</button>
+                        </form>
                     </td>
                 </tr>
             <?php endforeach ?>

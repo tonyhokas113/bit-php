@@ -9,6 +9,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['logout'])) {
     header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/login.php');
     die;
 }
+if (isset($_POST['user']) && $_POST['user'] == '') {
+    setMessage('Klaida! Prašome įvesti prisijungimo vardą.', 'alert alert-danger', '!');
+    header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/index.php');
+    die;
+}
+if (isset($_POST['password']) && $_POST['password'] == '') {
+    setMessage('Klaida! Prašome įvesti slaptažodį.', 'alert alert-danger', '!');
+    header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/index.php');
+    die;
+}
 if (isset($_POST['user'])) {
     $users = json_decode(file_get_contents(__DIR__ . '/bankUsers.json'), 1);
     foreach ($users as $user) {
@@ -32,16 +42,6 @@ if (isset($_POST['user'])) {
         die;
     }
 }
-if (isset($_POST['user']) && $_POST['user'] == '') {
-    setMessage('Klaida! Prašome įvesti prisijungimo vardą.', 'alert alert-danger', '!');
-    header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/index.php');
-    die;
-}
-if (isset($_POST['password']) && $_POST['password'] == '') {
-    setMessage('Klaida! Prašome įvesti slaptažodį.', 'alert alert-danger', '!');
-    header('Location: http://127.0.0.1/bit-php/namu-darbai/bankas/index.php');
-    die;
-}
 ?>
 
 <!DOCTYPE html>
@@ -64,10 +64,10 @@ if (isset($_POST['password']) && $_POST['password'] == '') {
     <div class="login">
         <?php include __DIR__ . '/errorMsg.php' ?>
         <form class="box" action="" method="post">
-            <label class="firstlabel" for="user">Prisijungimo vardas</label>
-            <input id="user" type="text" name="user">
+            <label for="user">Prisijungimo vardas</label>
+            <input class="form-control" id="user" type="text" name="user">
             <label for="psw">Slaptažodis</label>
-            <input id="psw" type="password" name="password">
+            <input class="form-control" id="psw" type="password" name="password">
             <button class="btn-sm btn btn-outline-dark" type="submit">Prisijungti</button>
         </form>
     </div>

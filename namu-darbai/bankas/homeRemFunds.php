@@ -33,10 +33,7 @@ if (!isset($_SESSION['loggedIn'])) {
                 <a class="nav-link" href="?dir=homeNewAcc">Sukurti naują sąskaitą</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?dir=homeAddFunds">Pridėti lėšas</a>
-            </li>
-            <li class="nav-item">
-                <a class="bg-light nav-link active" aria-current="page" href="?dir=homeRemFunds">Nuskaičiuoti lėšas</a>
+                <a class="bg-light nav-link active">Nuskaičiuoti lėšas</a>
             </li>
         </ul>
         <?php if (isset($_SESSION['loggedIn'])) : ?>
@@ -53,21 +50,21 @@ if (!isset($_SESSION['loggedIn'])) {
         <?php endif ?>
     </div>
 
-    <div>
-        <?php include __DIR__ . '/errorMsg.php' ?>
-        <ul>
-            <?php foreach ($accounts as $account) : ?>
-                <li>
-                    <span class="list">Klientas:</span> <?= $account['name'] ?> <?= $account['surname'] ?>
-                    <br>
-                    <span class="list">Sąskaitos likutis:</span> <?= $account['amount'] ?>
-                    <form action="?dir=remFunds&id=<?= $account['id'] ?>" method="post">
-                        <input type="text" name="remFunds" placeholder="Kiek nuskaičiuoti">
-                        <button class="btn-sm btn btn-outline-dark" type="submit">Nuskaičiuoti lėšas</button>
-                    </form>
-                </li>
-            <?php endforeach ?>
-        </ul>
+    <?php include __DIR__ . '/errorMsg.php' ?>
+    <div class="addRemDiv">
+        <?php foreach ($accounts as $account) : ?>
+            <?php $id = $_GET['id'] ?? 0; ?>
+            <?php if ($id == $account['id']) : ?>
+                <span class="list">Klientas:</span>
+                <span class="accInfo"><?= $account['name'] ?> <?= $account['surname'] ?></span>
+                <span class="list">Sąskaitos likutis:</span class="accInfo">
+                <span class="accInfo"><?= $account['amount'] ?> eur.</span>
+                <form action="?dir=remFunds&id=<?= $account['id'] ?>" method="post">
+                    <input class="form-control width" type="text" name="remFunds" placeholder="Kiek nuskaičiuoti">
+                    <button class="createAccBtn btn-sm btn btn-outline-dark" type="submit">Nuskaičiuoti lėšas</button>
+                </form>
+            <?php endif ?>
+        <?php endforeach ?>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>

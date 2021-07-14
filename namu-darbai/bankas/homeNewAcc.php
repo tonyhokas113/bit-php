@@ -32,12 +32,6 @@ if (!isset($_SESSION['loggedIn'])) {
             <li class="nav-item">
                 <a class="bg-light nav-link active" aria-current="page" href="?dir=homeNewAcc">Sukurti naują sąskaitą</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="?dir=homeAddFunds">Pridėti lėšas</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="?dir=homeRemFunds">Nuskaičiuoti lėšas</a>
-            </li>
         </ul>
         <?php if (isset($_SESSION['loggedIn'])) : ?>
             <form action="http://127.0.0.1/bit-php/namu-darbai/bankas/login.php" method="post">
