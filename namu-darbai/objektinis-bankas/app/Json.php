@@ -1,82 +1,79 @@
 <?php
+
 namespace Bank;
+
 use App\DB\DataBase;
 
-class Json implements DataBase {
+class Json implements DataBase
+{
 
     private $data;
     private static $obj;
-    
+
     public static function getJson()
     {
         return self::$obj ?? self::$obj = new self;
     }
-    
+
     private function __construct()
     {
-        if (!file_exists(DIR.'/boxes.json')) {
-            file_put_contents(DIR.'/boxes.json', json_encode([]));
+        if (!file_exists(DIR . './data.json')) {
+            file_put_contents(DIR . './data.json', json_encode([]));
         }
-        $this->data = json_decode( file_get_contents(DIR.'/boxes.json'), 1);
+        $this->data = json_decode(file_get_contents(DIR . './data.json'), 1);
     }
 
     public function __destruct()
     {
-        file_put_contents(DIR.'/boxes.json', json_encode($this->data));
-    }
-    
-    
-    // box ['id' => 25, 'amount' => 258]
-    
-    
-    public function create(array $boxData) : void
-    {
-        $this->data[] = $boxData;
+        file_put_contents(DIR . './data.json', json_encode($this->data));
     }
 
-    public function update(int $boxId, array $boxData) : void
+    public function create(array $userData): void
     {
-        foreach ($this->data as $index => $box) {
-            if ($box['id'] == $boxId) {
-                $this->data[$index] = $boxData;
+        $this->data[] = $userData;
+    }
+
+    public function update(int $userId, array $userData): void
+    {
+        foreach ($this->data as $index => $user) {
+            if ($user['id'] == $userId) {
+                $this->data[$index] = $userData;
                 return;
             }
         }
-    } 
+    }
 
-    public function delete(int $boxId) : void
+    public function delete(int $userId): void
     {
-        foreach ($this->data as $index => $box) {
-            if ($box['id'] == $boxId) {
+        foreach ($this->data as $index => $user) {
+            if ($user['id'] == $userId) {
                 unset($this->data[$index]);
                 return;
             }
         }
-    } 
+    }
 
-    public function show(int $boxId) : array
+    public function show(int $userId): array
     {
-        foreach ($this->data as $index => $box) {
-            if ($box['id'] == $boxId) {
+        foreach ($this->data as $index => $user) {
+            if ($user['id'] == $userId) {
                 return $this->data[$index];
             }
         }
-    } 
+    }
 
-    public function showAll() : array
+    public function showAll(): array
     {
         return $this->data;
     }
 
-
-    public function getCount(int $amount) : bool
+    public function getCount(int $amount): bool
     {
         $counter = []; // veikia kaip Set'as
         $counter[$amount] = null;
-        foreach($this->data as $box) {
-            $counter[ $box['amount'] ] = null;
+        foreach ($this->data as $user) {
+            $counter[$user['amount']] = null;
         }
         return count($counter) !== count($this->data) ? true : false;
     }
-
 }

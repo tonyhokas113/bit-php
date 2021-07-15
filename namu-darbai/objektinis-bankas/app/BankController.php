@@ -1,11 +1,13 @@
 <?php
+
 namespace Bank;
 
-class AgurkaiController {
+class BankController
+{
 
     private static $dbType = 'json';
     // private static $dbType = 'maria';
-    
+
     public static function getData()
     {
         if (self::$dbType == 'json') {
@@ -16,21 +18,14 @@ class AgurkaiController {
         }
     }
 
-
-    public function agurkuTest($wahatToSay)
-    {
-        $labas = 'Hello, little One';
-        return App::view('test', compact('wahatToSay', 'labas'));
-    }
-
     public function index()
     {
-        $boxes = self::getData()->showAll();
+        // $boxes = self::getData()->showAll();
 
-        usort($boxes, fn ($a, $b) => $b['amount'] <=> $a['amount']);
+        // usort($boxes, fn ($a, $b) => $b['amount'] <=> $a['amount']);
 
 
-        return App::view('index', ['boxes' => $boxes]);
+        return App::view('index');
     }
 
     public function add($id)
@@ -82,6 +77,4 @@ class AgurkaiController {
         self::getData()->create($box);
         App::redirect();
     }
-
-
 }

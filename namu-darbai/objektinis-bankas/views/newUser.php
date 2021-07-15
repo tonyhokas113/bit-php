@@ -28,7 +28,7 @@
 
 <div class="formDiv">
     <?php include __DIR__ . '/errorMsg.php' ?>
-    <form class="newAccForm" action="?dir=addAcc" method="post">
+    <form class="newAccForm" action="<?= URL ?>/create-user" method="post">
         <label for="name">Įveskite kliento vardą:</label>
         <input class="form-control" id="name" type="text" placeholder="Vardas" name="vardas">
         <label for="surname">Įveskite kliento pavardę:</label>
