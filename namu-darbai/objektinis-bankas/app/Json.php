@@ -17,15 +17,15 @@ class Json implements DataBase
 
     private function __construct()
     {
-        if (!file_exists(DIR . './data.json')) {
-            file_put_contents(DIR . './data.json', json_encode([]));
+        if (!file_exists(__DIR__ . '../json/data.json')) {
+            file_put_contents(__DIR__ . '../json/data.json', json_encode([]));
         }
-        $this->data = json_decode(file_get_contents(DIR . './data.json'), 1);
+        $this->data = json_decode(file_get_contents(__DIR__ . '../json/data.json'), 1);
     }
 
     public function __destruct()
     {
-        file_put_contents(DIR . './data.json', json_encode($this->data));
+        file_put_contents(DIR . '../json/data.json', json_encode($this->data));
     }
 
     public function create(array $userData): void

@@ -1,33 +1,33 @@
-<?php require DIR . 'views/top.php' ?>
+<?php require __DIR__ . '/top.php' ?>
+
 
 <div class="fillBg">
-    <img class="logo" src="./img/cover.png" alt="logo">
+    <img class="logo" src="../img/cover.png" alt="logo">
 </div>
 <div class="navDivSize">
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="?dir=homeList">Sąskaitų sąrašas</a>
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1/bit-php/namu-darbai/objektinis-bankas/views/homePage.php">Sąskaitų sąrašas</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="?dir=homeNewAcc">Sukurti naują sąskaitą</a>
+            <a class="nav-link" href="http://127.0.0.1/bit-php/namu-darbai/objektinis-bankas/views/newUser.php">Sukurti naują sąskaitą</a>
         </li>
     </ul>
     <?php if (isset($_SESSION['loggedIn'])) : ?>
-        <form action="http://127.0.0.1/bit-php/namu-darbai/objektinis-bankas/login.php" method="post">
+        <form action="<?= URL ?>" method="post">
             <input type="hidden" name="logout">
             <button class="btn-sm btn btn-outline-dark logout" type="submit">Atsijungti</button>
         </form>
     <?php endif ?>
     <?php if (isset($_SESSION['user'])) : ?>
         <div class="loggedInArea">
-            <img class="userImg" src="./img/user.png" alt="user">
+            <img class="userImg" src="../img/user.png" alt="user">
             <span class="loggedInAs"><?= $_SESSION['user'] ?></span>
         </div>
     <?php endif ?>
 </div>
 
 <div>
-    <?php include __DIR__ . '/errorMsg.php' ?>
     <table class="table table-striped table-bordered align-middle table-sm table-hover">
         <tr class="table-dark">
             <th>#</th>
@@ -38,7 +38,7 @@
             <th>Sąskaitos likutis</th>
             <th>Galimi veiksmai</th>
         </tr>
-        <?php foreach ($_SESSION['acc'] as $account) : ?>
+        <?php foreach ($users as $account) : ?>
             <tr>
                 <td>
                     <?= $i++; ?>
@@ -74,4 +74,4 @@
     </table>
 </div>
 
-<?php require DIR . 'views/bottom.php' ?>
+<?php require __DIR__ . '/bottom.php' ?>

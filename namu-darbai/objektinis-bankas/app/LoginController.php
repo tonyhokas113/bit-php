@@ -1,11 +1,13 @@
 <?php
+
 namespace Bank;
 
-class LoginController {
+class LoginController
+{
 
     // private static $dbType = 'json';
     private static $dbType = 'maria';
-    
+
     public static function getData()
     {
         if (self::$dbType == 'json') {
@@ -16,24 +18,25 @@ class LoginController {
         }
     }
 
-    public function showLogin()
-    {
-        return App::view('login');
-    }
-
     public function doLogin()
     {
-        $name = $_POST['name'];
-        $pass = md5($_POST['pass']);
+        $name = $_POST['user'];
+        $pass = md5($_POST['password']);
 
         $user = self::getData()->getUser($name, $pass);
 
+        // $users = json_decode(file_get_contents(__DIR__ . './json/bankUsers.json'), 1);
+        // foreach ($users as $user) {
+        //     if ($user['name'] == $_POST['user']) {
+        //         if ($user['pass'] == md5($_POST['password'])) {
+        //             $_SESSION['loggedIn'] = 1;
+        //             $_SESSION['user'] = $user['name'];
+
         if (empty($user)) {
-            App::redirect('login'); // + pranesimas, kad blogas kazkas
+            App::redirect(); // + pranesimas, kad blogas kazkas
         }
         $_SESSION['logged'] = 1;
         $_SESSION['name'] = $name;
-        App::redirect();
+        App::redirect('views/homePage.php');
     }
-
 }

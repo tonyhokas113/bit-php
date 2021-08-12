@@ -27,7 +27,7 @@ class App
     public static function checkLogin()
     {
         if (!isset($_SESSION['logged'])) {
-            self::redirect('login');
+            self::redirect();
         }
     }
 
@@ -40,21 +40,19 @@ class App
 
         array_shift($uri);
 
-        if ('login' == $uri[0]) {
-            if ('GET' == $_SERVER['REQUEST_METHOD']) {
-                return (new LoginController)->showLogin();
-            } else {
+        if ($uri[3] == '') {
+            if ('POST' == $_SERVER['REQUEST_METHOD']) {
                 return (new LoginController)->doLogin();
             }
+            return (new BankController)->index();
         }
 
-        if ('logout' == $uri[0]) {
+        if ('logout' == $uri[3]) {
             unset($_SESSION['logged'], $_SESSION['name']);
             self::redirect('login');
         }
 
-
-        if ('create-user' == $uri[0]) {
+        if ('create' == $uri[4]) {
             self::checkLogin();
             if ('GET' == $_SERVER['REQUEST_METHOD']) {
                 return (new BankController)->create();
@@ -63,32 +61,6 @@ class App
             }
         }
 
-        if ('add' == $uri[0] && isset($uri[1])) {
-            self::checkLogin();
-            if ('GET' == $_SERVER['REQUEST_METHOD']) {
-                return (new BankController)->add($uri[1]);
-            } else {
-                return (new BankController)->doAdd($uri[1]);
-            }
-        }
-
-        if ('rem' == $uri[0] && isset($uri[1])) {
-            self::checkLogin();
-            if ('GET' == $_SERVER['REQUEST_METHOD']) {
-                return (new BankController)->remove($uri[1]);
-            } else {
-                return (new BankController)->doRemove($uri[1]);
-            }
-        }
-
-        if ('delete' == $uri[0] && isset($uri[1]) && 'POST' == $_SERVER['REQUEST_METHOD']) {
-            self::checkLogin();
-            return (new BankController)->delete($uri[1]);
-        }
-
-        if ($uri[0] == '') {
-            return (new BankController)->index();
-        }
 
         self::view('404');
         http_response_code(404);

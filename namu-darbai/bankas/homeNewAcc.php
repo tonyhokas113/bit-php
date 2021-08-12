@@ -50,7 +50,6 @@ if (!isset($_SESSION['loggedIn'])) {
     <div class="formDiv">
         <?php include __DIR__ . '/errorMsg.php' ?>
         <form class="newAccForm" action="?dir=addAcc" method="post">
-            <!-- <span class="newAccSpan">Norint sukurti naują sąskaitą reikia užpildyti šią formą:</span> -->
             <label for="name">Įveskite kliento vardą:</label>
             <input class="form-control" id="name" type="text" placeholder="Vardas" name="vardas">
             <label for="surname">Įveskite kliento pavardę:</label>

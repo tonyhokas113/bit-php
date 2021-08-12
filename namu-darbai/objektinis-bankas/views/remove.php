@@ -16,7 +16,7 @@
         </li>
     </ul>
     <?php if (isset($_SESSION['loggedIn'])) : ?>
-        <form action="http://127.0.0.1/bit-php/namu-darbai/objektinis-bankas/login.php" method="post">
+        <form action="<?= URL ?>login" method="post">
             <input type="hidden" name="logout">
             <button class="btn-sm btn btn-outline-dark logout" type="submit">Atsijungti</button>
         </form>

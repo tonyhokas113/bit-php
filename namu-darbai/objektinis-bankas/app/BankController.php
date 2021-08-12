@@ -20,12 +20,12 @@ class BankController
 
     public function index()
     {
-        // $boxes = self::getData()->showAll();
+        $users = self::getData()->showAll();
 
-        // usort($boxes, fn ($a, $b) => $b['amount'] <=> $a['amount']);
+        usort($users, fn ($a, $b) => $b['amount'] <=> $a['amount']);
 
 
-        return App::view('index');
+        return App::view('index', ['users' => $users]);
     }
 
     public function add($id)
@@ -68,7 +68,7 @@ class BankController
 
     public function create()
     {
-        return App::view('create_box');
+        return App::view('newUser');
     }
 
     public function save()

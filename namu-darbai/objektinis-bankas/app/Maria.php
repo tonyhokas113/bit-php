@@ -41,7 +41,7 @@ class Maria implements DataBase
     public function create(array $boxData): void
     {
         $sql =
-            "INSERT INTO dezes (`count`)
+            "INSERT INTO user-data (`count`)
         VALUES (0)";
         $this->pdo->query($sql);
     }
@@ -49,7 +49,7 @@ class Maria implements DataBase
     public function update(int $boxId, array $boxData): void
     {
         $sql =
-            "UPDATE dezes
+            "UPDATE user-data
         SET `count` = " . $boxData['amount'] . "
         WHERE id = $boxId";
 
@@ -60,7 +60,7 @@ class Maria implements DataBase
     public function delete(int $boxId): void
     {
         $sql =
-            "DELETE FROM dezes
+            "DELETE FROM user-data
         WHERE id = $boxId";
         $this->pdo->query($sql);
     }
@@ -69,7 +69,7 @@ class Maria implements DataBase
     {
         $sql =
             "SELECT id, `count` as amount
-        FROM dezes
+        FROM user-data
         WHERE id = $boxId
         ";
         $stmt = $this->pdo->query($sql);
@@ -81,7 +81,7 @@ class Maria implements DataBase
     {
         $sql =
             "SELECT id, `count` as amount
-        FROM dezes
+        FROM user-data
         ";
         $all = [];
         $stmt = $this->pdo->query($sql);
@@ -97,7 +97,7 @@ class Maria implements DataBase
         $sql =
             "SELECT *
         FROM users
-        WHERE name = ? AND pass = ?
+        WHERE name = ? AND password = ?
         ";
 
         $stmt = $this->pdo->prepare($sql);
@@ -110,7 +110,7 @@ class Maria implements DataBase
     {
         $sql =
             "SELECT *
-        FROM dezes
+        FROM user-data
         WHERE count = ?
         ";
 
